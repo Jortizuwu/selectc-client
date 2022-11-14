@@ -1,0 +1,107 @@
+import React, { useEffect } from 'react'
+
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { schema, UseDefaultValues } from './utils/login'
+
+export const Login = ({ handelChange }) => {
+  const {
+    formValues: { defaultValues },
+    isLoading,
+    submit
+  } = UseDefaultValues()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues
+  })
+
+  useEffect(() => {
+    reset(defaultValues)
+  }, [defaultValues, reset])
+
+  if (isLoading) return <>loading...</>
+
+  return (
+    <div className='flex w-full flex-wrap content-center justify-center bg-white'>
+      <div className='w-auto'>
+        <h1 className='text-xl font-semibold'>Login</h1>
+        <small className='text-gray-400'>
+          Welcome back! Please enter your details
+        </small>
+
+        <form
+          autoComplete='off'
+          onSubmit={handleSubmit(submit)}
+          className='mt-4'
+        >
+          <div className='mb-3'>
+            <label className='mb-2 block text-xs font-semibold'>
+              Email or nick name
+            </label>
+            <input
+              autoComplete='off'
+              type='text'
+              placeholder='Enter your nick name'
+              className='block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500'
+              {...register('nickName')}
+            />
+            <p>{errors.nickName?.message}</p>
+          </div>
+
+          <div className='mb-3'>
+            <label className='mb-2 block text-xs font-semibold'>Password</label>
+            <input
+              autoComplete='off'
+              type='password'
+              placeholder='*****'
+              {...register('password')}
+              className='block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500'
+            />
+            <p>{errors.password?.message}</p>
+          </div>
+
+          <div className='mb-3 flex content-center'>
+            {/* <input
+              id='remember'
+              type='checkbox'
+              className='mr-1 checked:bg-purple-700'
+            />
+            <label htmlFor='remember' className='mr-auto text-xs font-semibold'>
+              Remember for 30 days
+            </label> */}
+            <a
+              href='#'
+              className='text-xs text-right font-semibold text-purple-700'
+            >
+              Forgot password?
+            </a>
+          </div>
+          <div className='text-center mb-3'>
+            <span className='text-xs text-gray-400 font-semibold'>
+              Don't have account?
+            </span>
+            <button
+              onClick={handelChange}
+              className='text-xs font-semibold text-purple-700'
+            >
+              Sign up
+            </button>
+          </div>
+          <div className='mb-3'>
+            <button
+              type='submit'
+              className='mb-1.5 block w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md'
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
