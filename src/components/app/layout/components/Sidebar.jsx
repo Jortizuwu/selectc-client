@@ -1,11 +1,12 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {
   UilSetting,
   UilEstate,
   UilUser,
-  UilBookOpen,
   UilSignout,
-  UilSignin
+  UilSignin,
+  UilClipboardAlt,
+  UilFileGraph
 } from '@iconscout/react-unicons'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -19,10 +20,16 @@ const NAVLINK_ROUTES = [
     icon: <UilEstate />,
     link: '/'
   },
+
   {
-    name: 'User',
-    icon: <UilUser />,
-    link: '/user'
+    name: 'Surveys',
+    icon: <UilFileGraph />,
+    link: '/surveys'
+  },
+  {
+    name: 'Vocational tests',
+    icon: <UilClipboardAlt />,
+    link: '/test'
   },
   {
     name: 'Settings',
@@ -30,15 +37,20 @@ const NAVLINK_ROUTES = [
     link: '/settings'
   },
   {
-    name: 'Book',
-    icon: <UilBookOpen />,
-    link: '/book'
+    name: 'User',
+    icon: <UilUser />,
+    link: '/user',
+    login: true
   }
 ]
 
+const EXCLUDE_NAVIGATE = ['/test', '/', '/surveys']
+
 export const Sidebar = () => {
   const { currentUser } = useSelector((state) => state.user)
+  const navigate = useNavigate()
   const dispatch = useDispatch()
+  const { pathname } = useLocation()
 
   const handleSignout = () => {
     dispatch(modalAction())
@@ -47,15 +59,19 @@ export const Sidebar = () => {
   const handleLogOut = () => {
     dispatch(removeUser())
     localStorage.removeItem('token')
+    if (!EXCLUDE_NAVIGATE.includes(pathname)) navigate('/')
   }
 
   return (
-    <div className='h-screen'>
+    <div className='h-screen fixed z-20'>
       <aside className='w-64 h-full' aria-label='Sidebar'>
         <div className='px-3 py-4 shadow-md overflow-y-auto bg-white h-full'>
           <Logo />
           <ul className='space-y-2 relative h-full pt-16'>
-            {NAVLINK_ROUTES.map((val) => (
+            {NAVLINK_ROUTES.slice(
+              0,
+              currentUser ? NAVLINK_ROUTES.length : NAVLINK_ROUTES.length - 2
+            ).map((val) => (
               <li key={val.name}>
                 <NavLink
                   to={val.link}
@@ -73,12 +89,14 @@ export const Sidebar = () => {
               <div className='flex'>
                 <img
                   className='h-10 w-10 rounded-full'
-                  src='https://i.ytimg.com/vi/bg7rJgjnML0/hqdefault.jpg'
-                  alt='makima'
+                  src='https://th.bing.com/th/id/R.56c43cbb520b6765ff4eb984fadf57b3?rik=HKOzBY9VwmQSQQ&pid=ImgRaw&r=0&sres=1&sresct=1'
+                  alt='default'
                 />
 
                 <div className='ml-4'>
-                  <h2 className='font-medium'>{currentUser?.nickName}</h2>
+                  {currentUser && (
+                    <h2 className='font-medium capitalize'>{`${currentUser?.name}`}</h2>
+                  )}
                 </div>
               </div>
               <section className='flex h-10 w-11 items-center justify-center'>

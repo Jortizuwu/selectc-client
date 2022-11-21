@@ -3,8 +3,7 @@ import authServices from '../../../../shared/services/auth/authServices'
 
 export const authUser = createAsyncThunk('auth', (user, thunkAPI) => {
   try {
-    const data = authServices.authUser(user)
-    return data
+    return user
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||

@@ -13,20 +13,20 @@ export const LOGIN_WITH_JWT = gql`
           name
           roleID
         }
-        nickName
+        email
         name
         uid
+        age
+        gender
+        income
       }
     }
   }
 `
-export const LOGIN_WITH_NICKNAMEANDPASSWORD = gql`
+export const LOGIN_WITH_EMAILANDPASSWORD = gql`
   # login user with nick name and password
-  mutation LoginWhitNickNameAndPassword(
-    $nickName: String!
-    $password: String!
-  ) {
-    loginWhitNickNameAndPassword(nickName: $nickName, password: $password) {
+  mutation LoginWhitEmailAndPassword($email: String!, $password: String!) {
+    loginWhitEmailAndPassword(email: $email, password: $password) {
       code
       message
       success
@@ -36,8 +36,12 @@ export const LOGIN_WITH_NICKNAMEANDPASSWORD = gql`
           name
           roleID
         }
-        nickName
+        email
         name
+        lastName
+        age
+        gender
+        income
         uid
       }
     }
@@ -48,14 +52,14 @@ export const REGISTER_USER = gql`
   mutation CreateUser(
     $name: String!
     $lastName: String!
-    $nickName: String!
+    $email: String!
     $password: String!
     $roleName: AllRoles!
   ) {
     createUser(
       name: $name
       lastName: $lastName
-      nickName: $nickName
+      email: $email
       password: $password
       RoleName: $roleName
     ) {
@@ -65,25 +69,14 @@ export const REGISTER_USER = gql`
       user {
         lastName
         name
-        nickName
+        email
+        age
+        gender
+        income
         uid
         Role {
           name
           roleID
-        }
-      }
-    }
-  }
-`
-export const ADD_CONTENT_BOOK = gql`
-  # add content to book
-  mutation CreateContent($bookId: ID!, $content: String!) {
-    createContent(bookID: $bookId, content: $content) {
-      content {
-        content
-        contentID
-        User {
-          nickName
         }
       }
     }

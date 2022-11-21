@@ -1,6 +1,13 @@
+import { Form } from './components/Form'
+import { Test } from './components/Test'
 
-export const User = () => {
+const User = () => {
   return (
-    <div>user</div>
+    <div className=''>
+      <Form />
+      <Test />
+    </div>
   )
 }
+
+export default User

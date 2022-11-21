@@ -1,7 +1,7 @@
 const Logo = ({ postion = 'absolute' }) => {
   return (
     <h1 className={`${postion} uppercase text-2xl font-extrabold`}>
-      <em className='text-green-300'>g</em>book
+      <em className='text-blue-300'>sele</em>ctc
     </h1>
   )
 }

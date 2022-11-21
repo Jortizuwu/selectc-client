@@ -6,7 +6,7 @@ import Logo from '../../../../shared/components/Logo'
 
 export const Navbar = () => {
   return (
-    <nav className='w-full flex relative justify-between items-center mx-auto px-8 h-20'>
+    <nav className='w-full flex justify-between items-center mx-auto px-8 h-20'>
       <div className='inline-flex'>
         <Link to='/'>
           <Logo postion='relative' />

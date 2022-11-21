@@ -1,82 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* root varaibles */
 :root {
-  /* colors */
-  --body-bg: #fafafa;
-  --page-bg: #ffffff;
-  --dark-text: #2a2935;
-  /* spacing */
-  /* this is what defines the global scale */
-  --baseline: 12px;
-  /* fonts */
-  --book-title: 'Tulpen One', sans-serif;
-  --title: 'Cormorant Garamond', serif;
-  --body: 'Cormorant Garamond', serif;
-  --base-size: var(--baseline) * 1.2;
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7b8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 1rem 1rem var(--color-light);
 }
 
-.cover {
-  width: calc(var(--baseline) * 60);
-  height: calc(var(--baseline) * 42.6);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.158);
-  border-radius: 2%;
-  overflow: hidden;
+.recent-oders {
+  margin-top: 2rem;
 }
-.book {
+
+.recent-oders {
+  margin-bottom: 0.8rem;
+}
+
+.recent-oders table {
+  background: var(--color-white);
   width: 100%;
-  height: 100%;
-  display: flex;
-  perspective: 1200px;
-}
-.book__page {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: grid;
-  transform: rotateY(0deg);
-  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform-origin: 0% 0%;
-  background-color: var(--page-bg);
-  background-image: linear-gradient(
-    90deg,
-    rgba(227, 227, 227, 0.466) 0%,
-    rgba(247, 247, 247, 0) 18%
-  );
-}
-
-.book__page--4 {
-  /* cursor: pointer; */
-  padding: 0 calc(var(--baseline) * 3);
-}
-
-.book__page .page__content {
-  height: 100%;
-  position: relative;
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
   text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
 }
 
-.book__page .page__content-title {
-  font-family: var(--title);
-  font-size: calc(var(--base-size) * 1);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: calc(var(--baseline) * 2);
-  margin-bottom: calc(var(--baseline) * 2);
+table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
 }
 
-.book__page .page__content-blockquote-text {
-  font-family: var(--title);
-  font-size: calc(var(--base-size) * 1);
-  /* font-style: italic;
-  text-align: justify; */
+table tbody tr:last-child td {
+  border: none;
 }
-.book__page .page__number {
-  position: absolute;
-  bottom: var(--baseline);
-  width: calc(100% - (var(--baseline) * 2));
-  font-family: var(--title);
-  font-size: calc(var(--base-size) * 0.67);
+
+.recent-oders a {
   text-align: center;
+  display: block;
+  margin: 1rem auto;
+  color: var(--color-info-dark);
+}
+/* media queries */
+@media screen and (max-width: 1200px) {
+  .recent-oders {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8rem;
+  }
+  .recent-oders table {
+    width: 84vw;
+  }
 }
