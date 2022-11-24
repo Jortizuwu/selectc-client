@@ -13,6 +13,12 @@ const Settings = lazy(() => import('../../pages/settings'))
 const Surveys = lazy(() => import('../../pages/surveys'))
 const Tests = lazy(() => import('../../pages/tests'))
 const PageNotFound = lazy(() => import('../../pages/404'))
+const Personality = lazy(() =>
+  import('../../pages/surveys/components/Personality')
+)
+const Preferences = lazy(() =>
+  import('../../pages/surveys/components/Preferences')
+)
 
 const App = () => {
   const { currentUser } = useSelector((state) => state.user)
@@ -36,6 +42,8 @@ const App = () => {
               <>
                 <Route path='settings' element={<Settings />} />
                 <Route path='user' element={<User />} />
+                <Route path='surveys/personality' element={<Personality />} />
+                <Route path='surveys/preferences' element={<Preferences />} />
               </>
             )}
           </Route>
