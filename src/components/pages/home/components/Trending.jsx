@@ -2,16 +2,16 @@ import React from 'react'
 
 const Trending = () => {
   return (
-    <div className='recent-oders'>
-      <h2 className='text-2xl font-bold capitalize mb-4'>tendencias</h2>
-      <table>
+    <div className='recent-oders text-xs md:text-base mt-3'>
+      <h2 className='text-2xl font-bold capitalize mb-4'>trending</h2>
+      <table className='overflow-x-auto overflow-hidden p-2'>
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Universidad</th>
-            <th>Pago</th>
-            <th>referencia min</th>
-            <th>referencia max</th>
+            <th>Name</th>
+            <th>University</th>
+            <th>Price per semester</th>
+            <th>Reference min</th>
+            <th>Reference max</th>
           </tr>
         </thead>
         <tbody>

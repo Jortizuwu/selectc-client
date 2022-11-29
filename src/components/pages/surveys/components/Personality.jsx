@@ -4,29 +4,7 @@ import { useForm } from 'react-hook-form'
 import { Answer } from './Answer'
 import { schema, UseDefaultValues } from './utils/personality'
 import { UilMessage } from '@iconscout/react-unicons'
-
-const RADIO_IDS = [
-  {
-    answer: 'Me gusta reparar cosas',
-    id: 'answer1'
-  },
-  {
-    answer: 'Me desilusiono con facilidad',
-    id: 'answer2'
-  },
-  {
-    answer: 'En ocasiones, cometo errores',
-    id: 'answer3'
-  },
-  {
-    answer: 'Me gusta ayudar a los demás',
-    id: 'answer4'
-  },
-  {
-    answer: 'Disfruto de conocer a gente nueva',
-    id: 'answer5'
-  }
-]
+import { PERSONALITY_ANSWER } from '../../../../shared/constants/answer'
 
 const Personality = () => {
   const {
@@ -47,19 +25,29 @@ const Personality = () => {
     <>
       <h2 className='font-bold capitalize text-xl'>Personality</h2>
       <div className='mt-4 bg-white py-4 px-7 rounded-xl shadow-xl'>
-        <div className='flex space-x-4 justify-end mb-4'>
-          <span className='uppercase text-sm font-bold'>Total descuerdo</span>
-          <span className='uppercase text-sm font-bold'>Desacuerdo </span>
-          <span className='uppercase text-sm font-bold'>No está seguro</span>
-          <span className='uppercase text-sm font-bold'>De acuerdo</span>
-          <span className='uppercase text-sm font-bold'>Total acuerdo</span>
+        <div className='flex space-x-1 md:space-x-4  justify-end mb-4'>
+          <span className='uppercase md:text-sm text-[8px] font-bold'>
+            Total descuerdo
+          </span>
+          <span className='uppercase md:text-sm text-[8px] font-bold'>
+            Desacuerdo
+          </span>
+          <span className='uppercase md:text-sm text-[8px] font-bold'>
+            No está seguro
+          </span>
+          <span className='uppercase md:text-sm text-[8px] font-bold'>
+            De acuerdo
+          </span>
+          <span className='uppercase md:text-sm text-[8px] font-bold'>
+            Total acuerdo
+          </span>
         </div>
 
         <form
           className='relative flex flex-col'
           onSubmit={handleSubmit(submit)}
         >
-          {RADIO_IDS.map((val) => (
+          {PERSONALITY_ANSWER.map((val) => (
             <Answer
               answer={val.answer}
               register={register}
@@ -68,11 +56,13 @@ const Personality = () => {
             />
           ))}
           {errors && (
-            <p className='text-red-500'>You must select all the boxes</p>
+            <p className='text-red-500 text-xs mb-2 md:text-base'>
+              You must select all the boxes
+            </p>
           )}
           <div className='flex w-full items-end justify-end'>
             <button
-              className='bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
+              className=' w-full md:w-auto bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
               type='submit'
               disabled={isLoading}
             >

@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  modalIsOpen: false
+  modalIsOpen: false,
+  dropMenu: false
 }
 
 export const uiSlice = createSlice({
@@ -10,11 +11,14 @@ export const uiSlice = createSlice({
   reducers: {
     modalAction: (state) => {
       state.modalIsOpen = !state.modalIsOpen
+    },
+    dropMenuAction: (state) => {
+      state.dropMenu = !state.dropMenu
     }
   }
 })
 
-export const { modalAction } = uiSlice.actions
+export const { modalAction, dropMenuAction } = uiSlice.actions
 
 const uiReducer = uiSlice.reducer
 

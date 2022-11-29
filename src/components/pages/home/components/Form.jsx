@@ -6,7 +6,7 @@ const Form = () => {
       <div className='w-full bg-white p-4 rounded-lg shadow-2xl'>
         <form action='https://formbold.com/s/FORM_ID' method='POST'>
           <div className='-mx-3 flex flex-wrap'>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='fName'
@@ -22,7 +22,7 @@ const Form = () => {
                 />
               </div>
             </div>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='lName'
@@ -56,7 +56,7 @@ const Form = () => {
           </div>
 
           <div className='-mx-3 flex flex-wrap'>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='date'
@@ -67,7 +67,7 @@ const Form = () => {
                 <input className='bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md' />
               </div>
             </div>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='time'
@@ -117,7 +117,7 @@ const Form = () => {
           </div>
 
           <div className='-mx-3 flex flex-wrap'>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='date'
@@ -128,7 +128,7 @@ const Form = () => {
                 <input className='bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md' />
               </div>
             </div>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='time'
@@ -141,7 +141,7 @@ const Form = () => {
             </div>
           </div>
           <div className='-mx-3 flex flex-wrap'>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='date'
@@ -152,7 +152,7 @@ const Form = () => {
                 <input className='bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md' />
               </div>
             </div>
-            <div className='w-full px-3 sm:w-1/2'>
+            <div className='w-full px-3 md:w-1/2'>
               <div className='mb-5'>
                 <label
                   for='time'

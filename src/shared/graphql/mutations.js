@@ -1,7 +1,10 @@
 import { gql } from '@apollo/client'
+import { USER_DATA } from './fragments'
 
+// auth
 export const LOGIN_WITH_JWT = gql`
   # login user with jwt
+  ${USER_DATA}
   mutation LoginWhitToken($token: String!) {
     loginWhitToken(token: $token) {
       code
@@ -9,22 +12,14 @@ export const LOGIN_WITH_JWT = gql`
       success
       token
       user {
-        Role {
-          name
-          roleID
-        }
-        email
-        name
-        uid
-        age
-        gender
-        income
+        ...CoreUser
       }
     }
   }
 `
 export const LOGIN_WITH_EMAILANDPASSWORD = gql`
   # login user with nick name and password
+  ${USER_DATA}
   mutation LoginWhitEmailAndPassword($email: String!, $password: String!) {
     loginWhitEmailAndPassword(email: $email, password: $password) {
       code
@@ -32,23 +27,14 @@ export const LOGIN_WITH_EMAILANDPASSWORD = gql`
       success
       token
       user {
-        Role {
-          name
-          roleID
-        }
-        email
-        name
-        lastName
-        age
-        gender
-        income
-        uid
+        ...CoreUser
       }
     }
   }
 `
 export const REGISTER_USER = gql`
   # create a user
+  ${USER_DATA}
   mutation CreateUser(
     $name: String!
     $lastName: String!
@@ -67,18 +53,110 @@ export const REGISTER_USER = gql`
       code
       message
       user {
-        lastName
-        name
-        email
-        age
-        gender
-        income
-        uid
-        Role {
-          name
-          roleID
-        }
+        ...CoreUser
       }
+    }
+  }
+`
+// user
+export const UPDATE_USER = gql`
+  ${USER_DATA}
+  mutation UpdateUser(
+    $name: String
+    $lastName: String
+    $email: String
+    $age: Int
+    $gender: String
+    $income: Int
+  ) {
+    updateUser(
+      name: $name
+      lastName: $lastName
+      email: $email
+      age: $age
+      gender: $gender
+      income: $income
+    ) {
+      success
+      message
+      token
+      user {
+        ...CoreUser
+      }
+    }
+  }
+`
+// user has preference
+export const ADD_PREFERENCE_TO_USE = gql`
+  # add preference to user
+  mutation AddPreferenceToUser($arrPreferences: [String]) {
+    addPreferenceToUser(arrPreferences: $arrPreferences) {
+      code
+      message
+    }
+  }
+`
+
+export const ADDANDDELETE_PREFERENCE_TO_USE = gql`
+  # add preference to user
+  mutation addAndDeletePreferencesToUser($arrPreferences: [String]) {
+    deletePreferenceToUser {
+      code
+      message
+      success
+    }
+    addPreferenceToUser(arrPreferences: $arrPreferences) {
+      code
+      message
+    }
+  }
+`
+export const DELETE_PREFERENCES_TO_USE = gql`
+  # delete preference to user
+  mutation DeletePreferenceToUser {
+    deletePreferenceToUser {
+      code
+      message
+      success
+    }
+  }
+`
+
+// user has activity
+export const ADD_ACTIVITY_TO_USE = gql`
+  # add ativity to user
+  mutation AddActivityToUser($arrActivities: [ArrActivities]) {
+    addActivityToUser(arrActivities: $arrActivities) {
+      code
+      message
+      success
+    }
+  }
+`
+
+export const ADDANDDELETE_ACTIVITIES_TO_USE = gql`
+  # add preference to user
+  mutation addAndDeletePreferencesToUser($arrActivities: [ArrActivities]) {
+    deleteActivityToUser {
+      code
+      message
+      success
+    }
+    addActivityToUser(arrActivities: $arrActivities) {
+      code
+      message
+      success
+    }
+  }
+`
+
+export const DELETE_ACTIVITIES_TO_USE = gql`
+  # delete ativity to user
+  mutation DeleteActivityToUser {
+    deleteActivityToUser {
+      code
+      message
+      success
     }
   }
 `

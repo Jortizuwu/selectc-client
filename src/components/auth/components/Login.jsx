@@ -9,8 +9,7 @@ export const Login = ({ handelChange }) => {
   const {
     formValues: { defaultValues },
     isLoading,
-    submit,
-    error
+    submit
   } = UseDefaultValues()
   const {
     register,
@@ -83,11 +82,6 @@ export const Login = ({ handelChange }) => {
             </button>
           </div>
           <div className='mb-3'>
-            {error && (
-              <p className='text-red-400 text-sm mt-2 text-center'>
-                {error.message}
-              </p>
-            )}
             <button
               type='submit'
               disabled={isLoading}

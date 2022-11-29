@@ -1,7 +1,10 @@
 import { useMutation } from '@apollo/client'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import * as yup from 'yup'
-import { REGISTER_USER } from '../../../../../shared/graphql/mutations'
+import { Notify } from '../../../../../shared/components/Notify'
+import { ADDANDDELETE_PREFERENCE_TO_USE } from '../../../../../shared/graphql/mutations'
 
 export const schema = yup.object().shape({
   answer1: yup.string().required('the  answer1 field is required!'),
@@ -46,13 +49,21 @@ const initialValues = {
 }
 
 export const UseDefaultValues = () => {
-  const [{ loading, error }] = useMutation(REGISTER_USER)
+  const navigate = useNavigate()
+  const { uid } = useSelector((state) => state.user.currentUser)
+  const [add, { loading, error }] = useMutation(ADDANDDELETE_PREFERENCE_TO_USE)
 
   const mutate = async (values) => {
     try {
-      // const { data } = await register({ variables: { ...values } })
-      console.log(values)
+      const arrPreferences = Object.values(values).filter(
+        (val) => val !== 'Not'
+      )
+      const { data } = await add({ variables: { arrPreferences } })
+      console.log(data)
+      Notify('preferences add')
+      navigate(`/user/${uid}`)
     } catch (error) {
+      Notify('opps! something doesn`t seem to be right', 'error')
       return error
     }
   }

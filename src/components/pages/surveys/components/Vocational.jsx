@@ -1,15 +1,14 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { UilMessage, UilCapsule } from '@iconscout/react-unicons'
-
 import { Answer } from './Answer'
-import { schema, UseDefaultValues } from './utils/preferences'
+import { schema, UseDefaultValues } from './utils/vocational'
+import { UilMessage, UilCapsule } from '@iconscout/react-unicons'
 import { Spinner } from '../../../../shared/components/Spinner'
-import { PREFERENCES_ANSWER } from '../../../../shared/constants/answer'
+import { VOCATIONAL_ANSWER } from '../../../../shared/constants/answer'
 import { Notify } from '../../../../shared/components/Notify'
 
-const Preferences = () => {
+const Vocational = () => {
   const {
     formValues: { defaultValues },
     isLoading,
@@ -33,9 +32,9 @@ const Preferences = () => {
   return (
     <>
       <h2 className='font-bold capitalize text-xl'>
-        Preferences <UilCapsule className='inline-block' />
+        Vocational <UilCapsule className='inline-block' />
       </h2>
-      <div className='mt-4 bg-white py-4 px-7 rounded-xl shadow-xl'>
+      <div className='mt-4addActivityToUser bg-white py-4 px-7 rounded-xl shadow-xl'>
         <div className='flex space-x-4 justify-end mb-4'>
           <span className='uppercase text-sm font-bold'>Yes</span>
           <span className='uppercase text-sm font-bold'>Not</span>
@@ -45,7 +44,7 @@ const Preferences = () => {
           className='relative flex flex-col'
           onSubmit={handleSubmit(submit)}
         >
-          {PREFERENCES_ANSWER.map((val) => (
+          {VOCATIONAL_ANSWER.map((val) => (
             <Answer
               answer={val.answer}
               register={register}
@@ -71,4 +70,4 @@ const Preferences = () => {
   )
 }
 
-export default Preferences
+export default Vocational

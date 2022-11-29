@@ -1,6 +1,6 @@
 import React from 'react'
 
-const YesOrNot = ({ register, radioID }) => {
+const YesOrNot = ({ register, radioID, radioValue }) => {
   return (
     <div className='flex justify-end w-full space-x-7'>
       <input
@@ -9,7 +9,7 @@ const YesOrNot = ({ register, radioID }) => {
         id={radioID}
         {...register(radioID)}
         className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='Yes'
+        value={radioValue}
       />
       <input
         type='radio'
@@ -70,15 +70,23 @@ const FiveOptions = ({ register, radioID }) => {
   )
 }
 
-export const Answer = ({ answer, register, radioID, yesornot = false }) => {
+export const Answer = ({
+  answer,
+  register,
+  radioID,
+  radioValue,
+  yesornot = false
+}) => {
   return (
-    <div className='mb-5 grid grid-cols-3'>
+    <div
+      className={`mb-5 grid ${!yesornot ? 'md:grid-cols-3' : 'grid-cols-3'} `}
+    >
       <label
         className={`mb-3  ${
           yesornot ? 'col-span-2' : 'col-span-1'
-        }  block text-base font-medium text-[#07074D]`}
+        }  block text-xs md:text-base font-medium text-[#07074D]`}
       >
-        {answer}
+        ¿{answer}?
       </label>
       <div
         className={`${
@@ -87,7 +95,11 @@ export const Answer = ({ answer, register, radioID, yesornot = false }) => {
       >
         {yesornot
           ? (
-            <YesOrNot radioID={radioID} register={register} />
+            <YesOrNot
+              radioID={radioID}
+              register={register}
+              radioValue={radioValue}
+            />
             )
           : (
             <FiveOptions radioID={radioID} register={register} />

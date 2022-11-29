@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 import { modalAction } from '../../../../redux/features/ui/uiSlice'
 import { authUser } from '../../../../redux/features/user/thunks'
+import { Notify } from '../../../../shared/components/Notify'
 import { REGISTER_USER } from '../../../../shared/graphql/mutations'
 
 export const schema = yup.object().shape({
@@ -48,7 +49,9 @@ export const UseDefaultValues = () => {
       localStorage.setItem('token', data.createUser.token)
       dispatch(authUser(data.createUser.user))
       dispatch(modalAction())
+      Notify('user created success')
     } catch (error) {
+      Notify(error?.message, 'error')
       return error
     }
   }

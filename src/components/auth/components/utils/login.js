@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 import { modalAction } from '../../../../redux/features/ui/uiSlice'
 import { authUser } from '../../../../redux/features/user/thunks'
+import { Notify } from '../../../../shared/components/Notify'
 import { LOGIN_WITH_EMAILANDPASSWORD } from '../../../../shared/graphql/mutations'
 
 export const schema = yup.object().shape({
@@ -26,7 +27,9 @@ export const UseDefaultValues = () => {
       dispatch(authUser(data.loginWhitEmailAndPassword.user))
       localStorage.setItem('token', data.loginWhitEmailAndPassword.token)
       dispatch(modalAction())
+      Notify('Welcome back')
     } catch (error) {
+      Notify(error?.message, 'error')
       return error
     }
   }
