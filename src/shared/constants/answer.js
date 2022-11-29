@@ -414,7 +414,7 @@ export const PREFERENCES_ANSWER = [
   {
     answer: 'Me gusta el mismo tipo y ritmo de trabajo cada día',
     id: 'answer8',
-    value: 'monotomia'
+    value: 'monotonia'
   },
   {
     answer:
