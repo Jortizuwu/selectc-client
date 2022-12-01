@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { UilMessage, UilCapsule } from '@iconscout/react-unicons'
+import { UilClipboardAlt, UilCapsule } from '@iconscout/react-unicons'
 
 import { Answer } from './Answer'
 import { schema, UseDefaultValues } from './utils/preferences'
@@ -55,14 +55,14 @@ const Preferences = () => {
               yesornot
             />
           ))}
-          <div className='flex w-full mt-2  items-end justify-end'>
+          <div className='w-full mt-2'>
             <button
-              className='bg-blue-300 w-full md:w-auto p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
+              className='bg-blue-300 w-full p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-400 transition-all'
               type='submit'
               disabled={isLoading}
             >
               {isLoading ? <Spinner /> : 'send'}
-              <UilMessage className='ml-3 inline-block' />
+              <UilClipboardAlt className='ml-3 inline-block' />
             </button>
           </div>
         </form>

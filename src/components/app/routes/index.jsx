@@ -3,6 +3,8 @@ import { lazy, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import { Loading } from '../../../shared/components/Loading'
+
 const Layout = lazy(() => import('../layout'))
 const Home = lazy(() => import('../../pages/home'))
 const User = lazy(() => import('../../pages/user'))
@@ -23,7 +25,7 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user)
   return (
     <BrowserRouter>
-      <Suspense fallback={<>Loading...</>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />

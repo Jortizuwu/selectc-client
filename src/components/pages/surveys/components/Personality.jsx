@@ -3,7 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Answer } from './Answer'
 import { schema, UseDefaultValues } from './utils/personality'
-import { UilMessage } from '@iconscout/react-unicons'
+import { UilClipboardAlt } from '@iconscout/react-unicons'
 import { PERSONALITY_ANSWER } from '../../../../shared/constants/answer'
 
 const Personality = () => {
@@ -60,14 +60,14 @@ const Personality = () => {
               You must select all the boxes
             </p>
           )}
-          <div className='flex w-full items-end justify-end'>
+          <div className='w-full'>
             <button
-              className=' w-full md:w-auto bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
+              className='w-full bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
               type='submit'
               disabled={isLoading}
             >
               send
-              <UilMessage className='ml-3 inline-block' />
+              <UilClipboardAlt className='ml-3 inline-block' />
             </button>
           </div>
         </form>
