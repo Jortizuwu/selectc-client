@@ -3,15 +3,15 @@ import React from 'react'
 const Trending = () => {
   return (
     <div className='recent-oders text-xs md:text-base mt-3'>
-      <h2 className='text-2xl font-bold capitalize mb-4'>trending</h2>
+      <h2 className='text-2xl font-bold capitalize mb-4'>Tendencias</h2>
       <table className='overflow-x-auto overflow-hidden p-2'>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>University</th>
-            <th>Price per semester</th>
-            <th>Reference min</th>
-            <th>Reference max</th>
+            <th>Nombre</th>
+            <th>Universidad</th>
+            <th>Precio por semestre</th>
+            <th>puntaje mínimo</th>
+            <th>puntaje máximo</th>
           </tr>
         </thead>
         <tbody>

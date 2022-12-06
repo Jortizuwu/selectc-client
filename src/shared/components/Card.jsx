@@ -19,10 +19,10 @@ const Card = ({ title, type, to = '/' }) => {
         </div>
       </section>
       <div className='text-gray-500 text-xs md:text-base'>
-        <span>Test to know your {type}</span>
+        <span>Encuesta para conocer su {type}</span>
         <p className='text-red-400'>
-          If you have already taken this survey and do it again, the data from
-          the previous one will be overwritten
+          Si ya ha realizado esta encuesta y la vuelve a hacer, los datos de la
+          anterior encuesta se sobrescribirá
         </p>
       </div>
     </Link>

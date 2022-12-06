@@ -14,19 +14,19 @@ export const Landing = () => {
       <div className='mx-auto text-center mb-4'>
         <div className='mx-auto max-w-lg'>
           <h1 className='text-3xl font-bold lg:text-4xl'>
-            You don't know what career to study?
+            ¿No sabes qué carrera estudiar aun?
           </h1>
           <p className='mt-6 text-center '>
-            Selectc is here to help, SELECTC is a web application that will help
-            you choose the career you should study, this based on your
-            preferences, market trends and many more things, do not hesitate to
-            register now
+            Selectc está aquí para ayudar, SELECTC es una aplicación web que te
+            ayudará a elegir la carrera que debes estudiar, esto en base a tus
+            preferencias, tendencias del mercado y muchas cosas más, no dudes en
+            registrarte ahora
           </p>
           <button
             onClick={handleCloseModal}
             className='mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto'
           >
-            Sing in now
+            click aquí para regístrese ahora
           </button>
         </div>
         <div className='mt-10 flex justify-center'>

@@ -11,22 +11,22 @@ import { NavLink } from 'react-router-dom'
 
 const NAVLINK_ROUTES = [
   {
-    name: 'Home',
+    name: 'Inicio',
     icon: <UilEstate />,
     link: '/'
   },
   {
-    name: 'Surveys',
+    name: 'Encuestas',
     icon: <UilFileGraph />,
     link: '/surveys'
   },
   {
-    name: 'Settings',
+    name: 'Configuración',
     icon: <UilSetting />,
     link: '/settings'
   },
   {
-    name: 'User',
+    name: 'Perfil',
     icon: <UilUser />,
     link: '/user'
   }

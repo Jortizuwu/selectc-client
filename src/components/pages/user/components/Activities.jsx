@@ -21,7 +21,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Professional activities depending on the vocational survey'
+      text: 'Actividades profesionales en función de la encuesta vocacional'
     }
   },
   scales: {
@@ -35,11 +35,11 @@ const options = {
 export const Activities = ({ data }) => {
   return (
     <div className='mb-4'>
-      <h2 className='mb-4 capitalize font-bold'>Professional activities</h2>
+      <h2 className='mb-4 capitalize font-bold'>Actividades profesionales</h2>
       {data.datasets[0].data.length === 0
         ? (
           <ToSurvey
-            title="You don't have professional activities yet"
+            title='Aún no tienes actividades profesionales'
             to='/surveys/vocational'
           />
           )

@@ -51,7 +51,7 @@ export const Sidebar = () => {
                       onClick={handleLogOut}
                       className='hover:bg-red-200  hover:text-white transition-all font-bold p-2 text-sm rounded-md'
                     >
-                      Sign out
+                      Iniciar sesión
                       <UilSignout className='text-red-500 hover:cursor-pointer inline-block ml-2' />
                     </button>
                     )
@@ -60,7 +60,7 @@ export const Sidebar = () => {
                       onClick={handleSignout}
                       className='hover:bg-blue-200  hover:text-white transition-all font-bold p-2 text-sm rounded-md'
                     >
-                      Sign in
+                      Cerrar sesión
                       <UilSignin className='text-blue-400 hover:cursor-pointer inline-block ml-2' />
                     </button>
                     )}

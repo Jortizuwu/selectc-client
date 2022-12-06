@@ -25,19 +25,19 @@ const Vocational = () => {
 
   useEffect(() => {
     if (Object.values(errors).length > 0) {
-      Notify('You must select all the boxes', 'error')
+      Notify('Debe seleccionar todas las casillas', 'error')
     }
   }, [errors])
 
   return (
     <>
       <h2 className='font-bold capitalize text-xl'>
-        Vocational <UilCapsule className='inline-block' />
+        Vocacional <UilCapsule className='inline-block' />
       </h2>
       <div className='mt-4addActivityToUser bg-white py-4 px-7 rounded-xl shadow-xl'>
         <div className='flex space-x-4 justify-end mb-4'>
-          <span className='uppercase text-sm font-bold'>Yes</span>
-          <span className='uppercase text-sm font-bold'>Not</span>
+          <span className='uppercase text-sm font-bold'>Si</span>
+          <span className='uppercase text-sm font-bold'>No</span>
         </div>
 
         <form
@@ -60,7 +60,7 @@ const Vocational = () => {
               type='submit'
               disabled={isLoading}
             >
-              {isLoading ? <Spinner /> : 'send'}
+              {isLoading ? <Spinner /> : 'enviar'}
               <UilClipboardAlt className='ml-3 inline-block' />
             </button>
           </div>

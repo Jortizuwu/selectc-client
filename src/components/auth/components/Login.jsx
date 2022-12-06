@@ -28,9 +28,8 @@ export const Login = ({ handelChange }) => {
   return (
     <div className='flex w-full flex-wrap content-center justify-center bg-white'>
       <div className='w-auto'>
-        <h1 className='text-xl font-semibold'>Login</h1>
         <small className='text-gray-400'>
-          Welcome back! Please enter your details
+          ¡Bienvenido! Por favor, introduzca sus datos
         </small>
         <form
           autoComplete='off'
@@ -38,7 +37,9 @@ export const Login = ({ handelChange }) => {
           className='mt-4'
         >
           <div className='mb-3'>
-            <label className='mb-2 block text-xs font-semibold'>Email</label>
+            <label className='mb-2 block text-xs font-semibold'>
+              Correo electrónico
+            </label>
             <input
               autoComplete='off'
               type='email'
@@ -49,7 +50,9 @@ export const Login = ({ handelChange }) => {
             <p className='text-red-400 text-sm mt-2'>{errors.email?.message}</p>
           </div>
           <div className='mb-3'>
-            <label className='mb-2 block text-xs font-semibold'>Password</label>
+            <label className='mb-2 block text-xs font-semibold'>
+              Contraseña
+            </label>
             <input
               autoComplete='off'
               type='password'
@@ -62,23 +65,23 @@ export const Login = ({ handelChange }) => {
             </p>
           </div>
           <div className='mb-3 flex content-center'>
-            <a
+            {/* <a
               href='#'
               className='text-xs text-right font-semibold text-purple-700'
             >
               Forgot password?
-            </a>
+            </a> */}
           </div>
           <div className='text-center mb-3'>
             <span className='text-xs text-gray-400 font-semibold'>
-              Don't have account?
+              ¿No tienes cuenta?
             </span>
             <button
               onClick={handelChange}
               type='button'
               className='text-xs font-semibold text-purple-700'
             >
-              Sign up
+              Únete
             </button>
           </div>
           <div className='mb-3'>
@@ -87,7 +90,7 @@ export const Login = ({ handelChange }) => {
               disabled={isLoading}
               className='flex space-x-4 justify-center items-center mb-1.5 w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md'
             >
-              {isLoading ? <Spinner /> : 'Sign in'}
+              {isLoading ? <Spinner /> : 'Inicia sesión'}
             </button>
           </div>
         </form>

@@ -12,11 +12,11 @@ const PreferenceCard = ({ name }) => {
 export const PreferencesGrid = ({ prefrences }) => {
   return (
     <div className='mb-4'>
-      <h2 className='mb-4 capitalize font-bold'>Preferences</h2>
+      <h2 className='mb-4 capitalize font-bold'>Preferencias</h2>
       {prefrences.length === 0
         ? (
           <ToSurvey
-            title="They don't have preference yet"
+            title='Todavía no tienen preferencia'
             to='/surveys/preferences'
           />
           )

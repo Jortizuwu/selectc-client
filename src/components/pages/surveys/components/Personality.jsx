@@ -23,7 +23,7 @@ const Personality = () => {
 
   return (
     <>
-      <h2 className='font-bold capitalize text-xl'>Personality</h2>
+      <h2 className='font-bold capitalize text-xl'>Personalidad</h2>
       <div className='mt-4 bg-white py-4 px-7 rounded-xl shadow-xl'>
         <div className='flex space-x-1 md:space-x-4  justify-end mb-4'>
           <span className='uppercase md:text-sm text-[8px] font-bold'>
@@ -57,7 +57,7 @@ const Personality = () => {
           ))}
           {errors && (
             <p className='text-red-500 text-xs mb-2 md:text-base'>
-              You must select all the boxes
+              Debe seleccionar todas las casillas
             </p>
           )}
           <div className='w-full'>
@@ -66,7 +66,7 @@ const Personality = () => {
               type='submit'
               disabled={isLoading}
             >
-              send
+              enviar
               <UilClipboardAlt className='ml-3 inline-block' />
             </button>
           </div>
