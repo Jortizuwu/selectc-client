@@ -1,8 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { modalAction } from '../../../../redux/features/ui/uiSlice'
 
 export const Landing = () => {
+  const { currentUser } = useSelector((state) => state.user)
   const dispatch = useDispatch()
 
   const handleCloseModal = () => {
@@ -19,15 +20,17 @@ export const Landing = () => {
           <p className='mt-6 text-center '>
             Selectc está aquí para ayudar, SELECTC es una aplicación web que te
             ayudará a elegir la carrera que debes estudiar, esto en base a tus
-            preferencias, tendencias del mercado y muchas cosas más, no dudes en
-            registrarte ahora
+            preferencias, tendencias del mercado y muchas cosas más
+            {!currentUser && 'no dudes en registrarte ahora'}
           </p>
-          <button
-            onClick={handleCloseModal}
-            className='mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto'
-          >
-            click aquí para regístrese ahora
-          </button>
+          {!currentUser && (
+            <button
+              onClick={handleCloseModal}
+              className='mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto'
+            >
+              click aquí para regístrarse ahora
+            </button>
+          )}
         </div>
         <div className='mt-10 flex justify-center'>
           <img

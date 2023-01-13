@@ -5,12 +5,12 @@ import { useGetUser } from '../../../shared/hooks/user/useGetUser'
 import { Activities } from './components/Activities'
 import { Form } from './components/Form'
 import { PreferencesGrid } from './components/PreferencesGrid'
-import { Test } from './components/Test'
+import { Coincidence } from './components/Coincidence'
 
 const User = () => {
   const { isLoading, user, error, refetch } = useGetUser()
 
-  const { defaultValues, preferences, data } = useMemo(
+  const { defaultValues, preferences, dataCareers, data, activities } = useMemo(
     () => ({
       defaultValues: {
         age: user?.age || 11,
@@ -21,6 +21,37 @@ const User = () => {
         name: user?.name
       },
       preferences: user?.Preferences,
+      activities: user?.Activities,
+      dataCareers: {
+        labels: user?.Careers.map((val) => ({
+          name: val.name,
+          coincidenceValue: val.user_has_career.coincidenceValue
+        }))
+          .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
+          .map((val) => val.name)
+          .slice(0, 6),
+        possible: user?.Careers.map((val) => ({
+          name: val.name,
+          coincidenceValue: val.user_has_career.coincidenceValue
+        }))
+          .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
+          .map((val) => val.name)[0],
+        datasets: [
+          {
+            label: 'posible carrera',
+            data: user?.Careers.map((val) => ({
+              name: val.name,
+              coincidenceValue: val.user_has_career.coincidenceValue
+            }))
+              .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
+              .map((val) => val.coincidenceValue)
+              .slice(0, 6),
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2
+          }
+        ]
+      },
       data: {
         labels: user?.Activities.map((val) => val.name),
         datasets: [
@@ -65,7 +96,11 @@ const User = () => {
       <Form defaultValues={defaultValues} />
       <PreferencesGrid prefrences={preferences} />
       <Activities data={data} />
-      <Test />
+      <Coincidence
+        careers={dataCareers}
+        preferences={preferences}
+        activities={activities}
+      />
     </>
   )
 }

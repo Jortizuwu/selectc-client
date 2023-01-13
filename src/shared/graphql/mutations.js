@@ -160,3 +160,17 @@ export const DELETE_ACTIVITIES_TO_USE = gql`
     }
   }
 `
+
+export const ADDANDDELETE_CAREERS_TO_USE = gql`
+  # add preference to user
+  mutation addAndDeleteCareerToUser($data: [ArrUserData]) {
+    deleteCareerToUser {
+      code
+    }
+    addCareerToUser(data: $data) {
+      career {
+        createdAt
+      }
+    }
+  }
+`

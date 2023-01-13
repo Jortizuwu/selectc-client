@@ -11,3 +11,18 @@ export const GET_USER_BY_ID = gql`
     }
   }
 `
+
+export const GET_CARRER_BY_ID = gql`
+  query GetCareerById($id: ID!) {
+    getCareerById(id: $id) {
+      career {
+        careerID
+        description
+        name
+        duration
+        matters
+        name
+      }
+    }
+  }
+`

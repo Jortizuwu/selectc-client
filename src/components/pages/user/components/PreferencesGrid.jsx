@@ -16,7 +16,7 @@ export const PreferencesGrid = ({ prefrences }) => {
       {prefrences.length === 0
         ? (
           <ToSurvey
-            title='Todavía no tienen preferencia'
+            title='Todavía no tienes preferencias'
             to='/surveys/preferences'
           />
           )

@@ -4,7 +4,8 @@ import {
   UilSetting,
   UilEstate,
   UilUser,
-  UilFileGraph
+  UilFileGraph,
+  UilGraduationCap
 } from '@iconscout/react-unicons'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
@@ -19,6 +20,11 @@ const NAVLINK_ROUTES = [
     name: 'Encuestas',
     icon: <UilFileGraph />,
     link: '/surveys'
+  },
+  {
+    name: 'Carreras',
+    icon: <UilGraduationCap />,
+    link: '/careers'
   },
   {
     name: 'Configuración',
@@ -39,7 +45,7 @@ export const ListRoutes = () => {
     <>
       {NAVLINK_ROUTES.slice(
         0,
-        currentUser ? NAVLINK_ROUTES.length : NAVLINK_ROUTES.length - 3
+        currentUser ? NAVLINK_ROUTES.length : NAVLINK_ROUTES.length - 4
       ).map((val) => (
         <li key={val.name}>
           <NavLink

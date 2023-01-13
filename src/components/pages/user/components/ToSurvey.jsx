@@ -7,9 +7,7 @@ export const ToSurvey = ({ title, to = '/' }) => {
       <Link to={to}>
         <div className='w-full'>
           <p className='font-extralight'>{title}</p>
-          <span className='text-blue-300 font-semibold'>
-            Click here to take the survey
-          </span>
+          <span className='text-blue-300 font-semibold'>Ir a la encuesta</span>
         </div>
       </Link>
     </div>

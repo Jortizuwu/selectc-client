@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { UilEdit, UilEnvelope } from '@iconscout/react-unicons'
+import { UilEnvelope } from '@iconscout/react-unicons'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
@@ -36,7 +36,7 @@ export const Form = ({ defaultValues }) => {
 
   return (
     <>
-      <div className='mb-10'>
+      {/* <div className='mb-10'>
         <div className='rounded relative mt-8 h-48'>
           <img
             src='https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/11/Hitori-Bocchi-the-Rock.jpg'
@@ -64,7 +64,7 @@ export const Form = ({ defaultValues }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className='pt-4'>
         <form onSubmit={handleSubmit(submit)}>

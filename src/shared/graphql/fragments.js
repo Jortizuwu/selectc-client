@@ -16,6 +16,14 @@ export const USER_DATA = gql`
       name
       preferenceID
     }
+    Careers {
+      name
+      description
+      careerID
+      user_has_career {
+        coincidenceValue
+      }
+    }
     email
     name
     uid
