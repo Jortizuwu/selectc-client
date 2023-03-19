@@ -25,7 +25,7 @@ export const schema = yup.object().shape({
     .string()
     .min(2, 'the name need 2 or more characters')
     .max(20, 'maximum characters are 50')
-    .required('the name field is required!')
+    .required('the name field is required!'),
 })
 
 const initialValues = {
@@ -34,7 +34,7 @@ const initialValues = {
   confirmPassword: '',
   lastName: '',
   name: '',
-  roleName: 'USER'
+  roleName: 'USER',
 }
 
 export const UseDefaultValues = () => {
@@ -62,7 +62,7 @@ export const UseDefaultValues = () => {
     error,
     formValues: {
       defaultValues: initialValues,
-      formProps: {}
-    }
+      formProps: {},
+    },
   }
 }

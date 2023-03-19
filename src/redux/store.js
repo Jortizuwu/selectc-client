@@ -7,7 +7,7 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER
+  REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
@@ -15,7 +15,7 @@ import rootReducer from './rootReducer'
 
 const persistConfig = {
   key: 'root',
-  storage
+  storage,
   // whitelist: ['user']
 }
 
@@ -27,9 +27,9 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-      }
-    })
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 })
 
 const persistor = persistStore(store)

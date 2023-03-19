@@ -24,7 +24,7 @@ export const schema = yup.object().shape({
   answer15: yup.string().required('thea nswer15 field is required!'),
   answer16: yup.string().required('thea nswer16 field is required!'),
   answer17: yup.string().required('thea nswer17 field is required!'),
-  answer18: yup.string().required('thea nswer18 field is required!')
+  answer18: yup.string().required('thea nswer18 field is required!'),
 })
 
 const initialValues = {
@@ -45,7 +45,7 @@ const initialValues = {
   answer15: '',
   answer16: '',
   answer17: '',
-  answer18: ''
+  answer18: '',
 }
 
 export const UseDefaultValues = () => {
@@ -74,7 +74,7 @@ export const UseDefaultValues = () => {
     error,
     formValues: {
       defaultValues: initialValues,
-      formProps: {}
-    }
+      formProps: {},
+    },
   }
 }

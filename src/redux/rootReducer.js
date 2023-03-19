@@ -5,7 +5,7 @@ import userReducer from './features/user/userSlice'
 
 const rootReducer = combineReducers({
   ui: uiReducer,
-  user: userReducer
+  user: userReducer,
 })
 
 export default rootReducer

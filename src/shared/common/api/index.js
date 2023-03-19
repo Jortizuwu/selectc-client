@@ -2,7 +2,7 @@ import {
   ApolloClient,
   createHttpLink,
   InMemoryCache,
-  split
+  split,
 } from '@apollo/client'
 import { getMainDefinition } from '@apollo/client/utilities'
 import { setContext } from '@apollo/client/link/context'
@@ -10,12 +10,12 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions'
 import { createClient } from 'graphql-ws'
 
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_API_BASE_URL
+  uri: import.meta.env.VITE_API_BASE_URL,
 })
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: import.meta.env.VITE_API_BASE_URL_WS
+    url: import.meta.env.VITE_API_BASE_URL_WS,
   })
 )
 
@@ -36,12 +36,12 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : ''
-    }
+      authorization: token ? `Bearer ${token}` : '',
+    },
   }
 })
 
 export const client = new ApolloClient({
   link: authLink.concat(splitLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 })

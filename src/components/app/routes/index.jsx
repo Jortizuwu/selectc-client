@@ -29,23 +29,23 @@ const App = () => {
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path='/' element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
 
             {currentUser && (
               <>
-                <Route path='surveys' element={<Surveys />} />
-                <Route path='settings' element={<Settings />} />
-                <Route path='careers' element={<Carrers />} />
-                <Route path='careers/:id' element={<Carrer />} />
-                <Route path='user/:uid' element={<User />} />
-                <Route path='surveys/personality' element={<Personality />} />
-                <Route path='surveys/preferences' element={<Preferences />} />
-                <Route path='surveys/vocational' element={<Vocational />} />
+                <Route path="surveys" element={<Surveys />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="careers" element={<Carrers />} />
+                <Route path="careers/:id" element={<Carrer />} />
+                <Route path="user/:uid" element={<User />} />
+                <Route path="surveys/personality" element={<Personality />} />
+                <Route path="surveys/preferences" element={<Preferences />} />
+                <Route path="surveys/vocational" element={<Vocational />} />
               </>
             )}
           </Route>
-          <Route path='*' element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

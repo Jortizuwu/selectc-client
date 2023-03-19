@@ -7,8 +7,8 @@ const User = lazy(() => import('../../../pages/user'))
 export const PrivateRoutes = () => {
   return (
     <>
-      <Route path='settings' element={<Settings />} />
-      <Route path='user' element={<User />} />
+      <Route path="settings" element={<Settings />} />
+      <Route path="user" element={<User />} />
     </>
   )
 }

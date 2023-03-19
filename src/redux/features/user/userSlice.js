@@ -3,7 +3,7 @@ import { authUser } from './thunks'
 
 export const initialState = {
   currentUser: null,
-  isLoading: false
+  isLoading: false,
 }
 
 export const userSlice = createSlice({
@@ -15,21 +15,21 @@ export const userSlice = createSlice({
     },
     removeUser: (state) => {
       state.currentUser = null
-    }
+    },
   },
   extraReducers: {
-    [authUser.pending]: (state, action) => {
+    [authUser.pending]: (state) => {
       state.isLoading = true
     },
     [authUser.fulfilled]: (state, action) => {
       state.isLoading = false
       state.currentUser = action.payload
     },
-    [authUser.rejected]: (state, action) => {
+    [authUser.rejected]: (state) => {
       state.isLoading = false
       state.currentUser = null
-    }
-  }
+    },
+  },
 })
 
 export const { saveUser, removeUser } = userSlice.actions

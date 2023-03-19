@@ -10,41 +10,41 @@ const Personality = () => {
   const {
     formValues: { defaultValues },
     isLoading,
-    submit
+    submit,
   } = UseDefaultValues()
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues
+    defaultValues,
   })
 
   return (
     <>
-      <h2 className='font-bold capitalize text-xl'>Personalidad</h2>
-      <div className='mt-4 bg-white py-4 px-7 rounded-xl shadow-xl'>
-        <div className='flex space-x-1 md:space-x-4  justify-end mb-4'>
-          <span className='uppercase md:text-sm text-[8px] font-bold'>
+      <h2 className="font-bold capitalize text-xl">Personalidad</h2>
+      <div className="mt-4 bg-white py-4 px-7 rounded-xl shadow-xl">
+        <div className="flex space-x-1 md:space-x-4  justify-end mb-4">
+          <span className="uppercase md:text-sm text-[8px] font-bold">
             Total descuerdo
           </span>
-          <span className='uppercase md:text-sm text-[8px] font-bold'>
+          <span className="uppercase md:text-sm text-[8px] font-bold">
             Desacuerdo
           </span>
-          <span className='uppercase md:text-sm text-[8px] font-bold'>
+          <span className="uppercase md:text-sm text-[8px] font-bold">
             No está seguro
           </span>
-          <span className='uppercase md:text-sm text-[8px] font-bold'>
+          <span className="uppercase md:text-sm text-[8px] font-bold">
             De acuerdo
           </span>
-          <span className='uppercase md:text-sm text-[8px] font-bold'>
+          <span className="uppercase md:text-sm text-[8px] font-bold">
             Total acuerdo
           </span>
         </div>
 
         <form
-          className='relative flex flex-col'
+          className="relative flex flex-col"
           onSubmit={handleSubmit(submit)}
         >
           {PERSONALITY_ANSWER.map((val) => (
@@ -56,18 +56,18 @@ const Personality = () => {
             />
           ))}
           {errors && (
-            <p className='text-red-500 text-xs mb-2 md:text-base'>
+            <p className="text-red-500 text-xs mb-2 md:text-base">
               Debe seleccionar todas las casillas
             </p>
           )}
-          <div className='w-full'>
+          <div className="w-full">
             <button
-              className='w-full bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all'
-              type='submit'
+              className="w-full bg-blue-300 p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-200 transition-all"
+              type="submit"
               disabled={isLoading}
             >
               enviar
-              <UilClipboardAlt className='ml-3 inline-block' />
+              <UilClipboardAlt className="ml-3 inline-block" />
             </button>
           </div>
         </form>

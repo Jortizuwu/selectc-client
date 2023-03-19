@@ -18,21 +18,21 @@ const User = () => {
         gender: user?.gender || '',
         income: user?.income || 0,
         lastName: user?.lastName,
-        name: user?.name
+        name: user?.name,
       },
       preferences: user?.Preferences,
       activities: user?.Activities,
       dataCareers: {
         labels: user?.Careers.map((val) => ({
           name: val.name,
-          coincidenceValue: val.user_has_career.coincidenceValue
+          coincidenceValue: val.user_has_career.coincidenceValue,
         }))
           .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
           .map((val) => val.name)
           .slice(0, 6),
         possible: user?.Careers.map((val) => ({
           name: val.name,
-          coincidenceValue: val.user_has_career.coincidenceValue
+          coincidenceValue: val.user_has_career.coincidenceValue,
         }))
           .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
           .map((val) => val.name)[0],
@@ -41,16 +41,16 @@ const User = () => {
             label: 'posible carrera',
             data: user?.Careers.map((val) => ({
               name: val.name,
-              coincidenceValue: val.user_has_career.coincidenceValue
+              coincidenceValue: val.user_has_career.coincidenceValue,
             }))
               .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
               .map((val) => val.coincidenceValue)
               .slice(0, 6),
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 2
-          }
-        ]
+            borderWidth: 2,
+          },
+        ],
       },
       data: {
         labels: user?.Activities.map((val) => val.name),
@@ -67,12 +67,12 @@ const User = () => {
               '#b421e0c5',
               '#40f0b5be',
               '#ffbb55cb',
-              '#835b8bc5'
+              '#835b8bc5',
             ],
-            borderWidth: 1
-          }
-        ]
-      }
+            borderWidth: 1,
+          },
+        ],
+      },
     }),
     [user]
   )
@@ -83,7 +83,7 @@ const User = () => {
 
   if (isLoading) {
     return (
-      <div className='flex w-full h-full items-end justify-center'>
+      <div className="flex w-full h-full items-end justify-center">
         <Spinner />
       </div>
     )

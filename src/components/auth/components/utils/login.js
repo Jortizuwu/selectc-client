@@ -8,12 +8,12 @@ import { LOGIN_WITH_EMAILANDPASSWORD } from '../../../../shared/graphql/mutation
 
 export const schema = yup.object().shape({
   email: yup.string().required('the email field is required!'),
-  password: yup.string().required('the password field is required!')
+  password: yup.string().required('the password field is required!'),
 })
 
 const initialValues = {
   email: '',
-  password: ''
+  password: '',
 }
 
 export const UseDefaultValues = () => {
@@ -40,7 +40,7 @@ export const UseDefaultValues = () => {
     error,
     formValues: {
       defaultValues: initialValues,
-      formProps: {}
-    }
+      formProps: {},
+    },
   }
 }

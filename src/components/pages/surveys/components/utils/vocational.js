@@ -76,7 +76,7 @@ export const schema = yup.object().shape({
   answer67: yup.string().required('thea nswer18 field is required!'),
   answer68: yup.string().required('thea nswer18 field is required!'),
   answer69: yup.string().required('thea nswer18 field is required!'),
-  answer70: yup.string().required('thea nswer18 field is required!')
+  answer70: yup.string().required('thea nswer18 field is required!'),
 })
 
 const initialValues = {
@@ -149,7 +149,7 @@ const initialValues = {
   answer67: '',
   answer68: '',
   answer69: '',
-  answer70: ''
+  answer70: '',
 }
 
 export const UseDefaultValues = () => {
@@ -167,7 +167,7 @@ export const UseDefaultValues = () => {
         'Profesiones Humanísticas y Sociales': 0,
         'Actividades Artísticas': 0,
         'Defensa y Seguridad': 0,
-        'Medicina y Ciencias de la Salud': 0
+        'Medicina y Ciencias de la Salud': 0,
       }
       Object.values(values)
         .filter((val) => val !== 'Not')
@@ -177,11 +177,11 @@ export const UseDefaultValues = () => {
       arrActivities.push(
         Object.keys(value).map((e) => ({
           name: e,
-          userValue: value[e]
+          userValue: value[e],
         }))
       )
       await add({
-        variables: { arrActivities: arrActivities[0] }
+        variables: { arrActivities: arrActivities[0] },
       })
       Notify('activities vocationals add')
       navigate(`/user/${uid}`)
@@ -197,7 +197,7 @@ export const UseDefaultValues = () => {
     error,
     formValues: {
       defaultValues: initialValues,
-      formProps: {}
-    }
+      formProps: {},
+    },
   }
 }

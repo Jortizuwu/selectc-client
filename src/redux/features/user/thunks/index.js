@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import authServices from '../../../../shared/services/auth/authServices'
 
 export const authUser = createAsyncThunk('auth', (user, thunkAPI) => {
   try {

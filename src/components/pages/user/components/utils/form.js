@@ -25,7 +25,7 @@ export const schema = yup.object().shape({
   //   .string()
   //   .oneOf([yup.ref('newPassword'), null], 'passwords must match'),
   gender: yup.string(),
-  income: yup.number('number')
+  income: yup.number('number'),
 })
 
 export const UseDefaultValues = () => {
@@ -35,8 +35,7 @@ export const UseDefaultValues = () => {
   const mutate = async (values) => {
     try {
       const { data } = await update({ variables: { ...values } })
-      const { Surveys, Preferences, Activities, password, ...rest } =
-        data.updateUser.user
+      const { ...rest } = data.updateUser.user
       dispatch(authUser(rest))
       localStorage.setItem('token', data.updateUser.token)
       Notify('user update')
@@ -52,7 +51,7 @@ export const UseDefaultValues = () => {
     submit: mutate,
     error,
     formValues: {
-      formProps: {}
-    }
+      formProps: {},
+    },
   }
 }

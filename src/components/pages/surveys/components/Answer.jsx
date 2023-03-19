@@ -2,22 +2,22 @@ import React from 'react'
 
 const YesOrNot = ({ register, radioID, radioValue }) => {
   return (
-    <div className='flex justify-end w-full space-x-7'>
+    <div className="flex justify-end w-full space-x-7">
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value={radioValue}
       />
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='Not'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="Not"
       />
     </div>
   )
@@ -27,44 +27,44 @@ const FiveOptions = ({ register, radioID }) => {
   return (
     <>
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='Total descuerdo'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="Total descuerdo"
       />
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='Desacuerdo'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="Desacuerdo"
       />
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='No está seguro'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="No está seguro"
       />
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='De acuerdo'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="De acuerdo"
       />
       <input
-        type='radio'
+        type="radio"
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className='h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer'
-        value='Total acuerdo'
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        value="Total acuerdo"
       />
     </>
   )
@@ -75,7 +75,7 @@ export const Answer = ({
   register,
   radioID,
   radioValue,
-  yesornot = false
+  yesornot = false,
 }) => {
   return (
     <div
@@ -93,17 +93,15 @@ export const Answer = ({
           yesornot ? 'col-span-1' : 'col-span-2'
         }  flex items-center justify-between space-x-1`}
       >
-        {yesornot
-          ? (
-            <YesOrNot
-              radioID={radioID}
-              register={register}
-              radioValue={radioValue}
-            />
-            )
-          : (
-            <FiveOptions radioID={radioID} register={register} />
-            )}
+        {yesornot ? (
+          <YesOrNot
+            radioID={radioID}
+            register={register}
+            radioValue={radioValue}
+          />
+        ) : (
+          <FiveOptions radioID={radioID} register={register} />
+        )}
       </div>
     </div>
   )

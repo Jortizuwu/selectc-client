@@ -5,7 +5,7 @@ import {
   UilEstate,
   UilUser,
   UilFileGraph,
-  UilGraduationCap
+  UilGraduationCap,
 } from '@iconscout/react-unicons'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
@@ -14,28 +14,28 @@ const NAVLINK_ROUTES = [
   {
     name: 'Inicio',
     icon: <UilEstate />,
-    link: '/'
+    link: '/',
   },
   {
     name: 'Encuestas',
     icon: <UilFileGraph />,
-    link: '/surveys'
+    link: '/surveys',
   },
   {
     name: 'Carreras',
     icon: <UilGraduationCap />,
-    link: '/careers'
+    link: '/careers',
   },
   {
     name: 'Configuración',
     icon: <UilSetting />,
-    link: '/settings'
+    link: '/settings',
   },
   {
     name: 'Perfil',
     icon: <UilUser />,
-    link: '/user'
-  }
+    link: '/user',
+  },
 ]
 
 export const ListRoutes = () => {
@@ -54,13 +54,13 @@ export const ListRoutes = () => {
                 ? val.link.concat(`/${currentUser.uid}`)
                 : val.link
             }
-            className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 '
+            className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
             style={({ isActive }) => {
               return isActive ? { backgroundColor: '#f3f4f6' } : undefined
             }}
           >
             {val.icon}
-            <span className='ml-3 text-xs lg:text-base font-medium'>
+            <span className="ml-3 text-xs lg:text-base font-medium">
               {val.name}
             </span>
           </NavLink>

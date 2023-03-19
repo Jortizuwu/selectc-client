@@ -7,16 +7,16 @@ export const Notify = (msg, type) => {
       position: 'bottom-center',
       style: {
         backgroundColor: '#ff7782',
-        color: 'white'
+        color: 'white',
       },
-      className: 'text-white font-bold'
+      className: 'text-white font-bold',
     })
   }
   if (type === 'ld') {
     return toast.loading('loading...', {
       duration: 3000,
       position: 'bottom-center',
-      className: 'text-white font-bold'
+      className: 'text-white font-bold',
     })
   }
   return toast.success(msg, {
@@ -24,8 +24,8 @@ export const Notify = (msg, type) => {
     position: 'bottom-center',
     style: {
       backgroundColor: '#41f1b6',
-      color: 'white'
+      color: 'white',
     },
-    className: 'text-white font-bold'
+    className: 'text-white font-bold',
   })
 }
