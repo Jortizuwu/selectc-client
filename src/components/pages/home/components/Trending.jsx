@@ -139,7 +139,7 @@ const Trending = () => {
             <th>Universidad</th>
             {/* <th>Costo semestre</th> */}
             <th>Puntaje máximo (icfes)</th>
-            <th>Puntaje mínimo (icfes)</th>
+            {/* <th>Puntaje mínimo (icfes)</th> */}
           </tr>
         </thead>
         <tbody>

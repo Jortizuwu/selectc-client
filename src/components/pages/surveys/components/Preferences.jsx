@@ -66,6 +66,18 @@ const Preferences = () => {
             </button>
           </div>
         </form>
+        <div className='mt-2'>
+          <a
+            href='https://med.se-todo.com/ekonomika/50950/index.html'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-gray-400 text-xs text-center w-full'
+          >
+            Med sé todo. (2022, August 10). cuestionario de intereses
+            profesionales. CUADERNO DE ORIENTACIÓN VOCACIONAL I.E.S. “LCDO.
+            FRANCISCO CASCALES”. Retrieved January 26, 2023, from
+          </a>
+        </div>
       </div>
     </>
   )

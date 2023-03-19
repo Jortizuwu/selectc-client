@@ -65,6 +65,17 @@ const Vocational = () => {
             </button>
           </div>
         </form>
+        <div className='mt-2'>
+          <a
+            href='https://www.psicologia-online.com/test-de-orientacion-vocacional-4279.html'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-gray-400 text-xs text-center w-full'
+          >
+            psicología-online. (2022). Test de orientación vocacional. Equipo
+            editorial.
+          </a>
+        </div>
       </div>
     </>
   )

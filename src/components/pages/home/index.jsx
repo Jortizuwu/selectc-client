@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Landing } from './components/Landing'
 import Trending from './components/Trending'
+import { Landing } from './components/Landing'
 
 const Home = () => {
   return (

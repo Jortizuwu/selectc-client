@@ -24,7 +24,7 @@ ChartJS.register(
 
 const Insights = ({ careers }) => {
   return (
-    <div className='rounded-3xl p-4 bg-white shadow-xl'>
+    <div className='col-span-2 rounded-3xl p-4 bg-white shadow-xl'>
       <section className='flex items-center justify-between'>
         <div className='bg-blue-300 rounded-full w-12 h-12 flex items-center'>
           <UilBackpack className='text-center w-auto mx-auto' />
