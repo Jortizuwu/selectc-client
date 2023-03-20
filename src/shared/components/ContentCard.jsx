@@ -3,8 +3,8 @@ import { UilCommentAltDots } from '@iconscout/react-unicons'
 const ContentCard = ({ data }) => {
   return (
     <div className="flex items-start rounded-xl bg-white p-4 shadow-md">
-      <div className="flex h-10 w-12 items-center justify-center rounded-full border border-blue-100 bg-blue-50">
-        <UilCommentAltDots color="blue" />
+      <div className="flex h-10 w-12 items-center justify-center rounded-full border border-green-100 bg-green-50">
+        <UilCommentAltDots color="green" />
       </div>
 
       <div className="ml-4">

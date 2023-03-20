@@ -3,15 +3,15 @@ import React from 'react'
 const Alert = () => {
   return (
     <div className="container text-white">
-      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-blue-600">
+      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-green-600">
         <div
-          className="bg-blue-50 rounded-t text-blue-900 px-4 py-3"
+          className="bg-green-50 rounded-t text-green-900 px-4 py-3"
           role="alert"
         >
           <div className="flex">
             <div>
               <svg
-                className="fill-current h-6 w-6 text-blue-500 mr-4"
+                className="fill-current h-6 w-6 text-green-500 mr-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -19,13 +19,13 @@ const Alert = () => {
               </svg>
             </div>
             <div>
-              <p className="text-sm text-blue-500">
+              <p className="text-sm text-green-500">
                 Lorem ipsum dolor sit amet, consectetur adip!.
               </p>
             </div>
             <p className="flex cursor-pointer">
               <svg
-                className="text-blue-500 text-xl"
+                className="text-green-500 text-xl"
                 stroke="currentColor"
                 fill="currentColor"
                 viewBox="0 0 1024 1024"
@@ -41,7 +41,7 @@ const Alert = () => {
         </div>
       </div>
       <br />
-      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-blue-600">
+      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-green-600">
         <div
           className="bg-green-50 rounded-t text-green-900 px-4 py-3"
           role="alert"
@@ -83,7 +83,7 @@ const Alert = () => {
         </div>
       </div>
       <br />
-      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-blue-600">
+      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-green-600">
         <div
           className="bg-yellow-50 rounded-t text-yellow-900 px-4 py-3"
           role="alert"
@@ -125,7 +125,7 @@ const Alert = () => {
         </div>
       </div>
       <br />
-      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-blue-600">
+      <div className="ml-auto mr-3 flex flex-col gap-2 w-72 border-b-4 border-b-green-600">
         <div
           className="bg-red-50 rounded-t text-red-900 px-4 py-3"
           role="alert"

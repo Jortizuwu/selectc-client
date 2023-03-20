@@ -8,7 +8,7 @@ const YesOrNot = ({ register, radioID, radioValue }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value={radioValue}
       />
       <input
@@ -16,7 +16,7 @@ const YesOrNot = ({ register, radioID, radioValue }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="Not"
       />
     </div>
@@ -31,7 +31,7 @@ const FiveOptions = ({ register, radioID }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="Total descuerdo"
       />
       <input
@@ -39,7 +39,7 @@ const FiveOptions = ({ register, radioID }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="Desacuerdo"
       />
       <input
@@ -47,7 +47,7 @@ const FiveOptions = ({ register, radioID }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="No está seguro"
       />
       <input
@@ -55,7 +55,7 @@ const FiveOptions = ({ register, radioID }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="De acuerdo"
       />
       <input
@@ -63,7 +63,7 @@ const FiveOptions = ({ register, radioID }) => {
         name={radioID}
         id={radioID}
         {...register(radioID)}
-        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-blue-400 checked:border-blue-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+        className="h-5 w-5 form-check-input appearance-none rounded-full border border-gray-300 bg-white checked:bg-green-400 checked:border-green-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
         value="Total acuerdo"
       />
     </>

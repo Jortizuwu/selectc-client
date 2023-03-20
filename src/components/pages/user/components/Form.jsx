@@ -199,7 +199,7 @@ export const Form = ({ defaultValues }) => {
           </div> */}
 
           <button
-            className="w-full shadow-lg hover:shadow-none  p-2 bg-blue-300 rounded-md font-bold capitalize text-white mb-4 hover:bg-blue-400 transition-all"
+            className="w-full shadow-lg hover:shadow-none  p-2 bg-green-300 rounded-md font-bold capitalize text-white mb-4 hover:bg-green-400 transition-all"
             type="submit"
           >
             actualizar

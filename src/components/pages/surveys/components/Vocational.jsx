@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Answer } from './Answer'
 import { schema, UseDefaultValues } from './utils/vocational'
@@ -7,8 +7,20 @@ import { UilClipboardAlt, UilCapsule } from '@iconscout/react-unicons'
 import { Spinner } from '../../../../shared/components/Spinner'
 import { VOCATIONAL_ANSWER } from '../../../../shared/constants/answer'
 import { Notify } from '../../../../shared/components/Notify'
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
+
+const tabs = [
+  'Artísticas',
+  'Ciencias Puras',
+  'Defensa y Seguridad',
+  'Ingeniería e Informática',
+  'Ciencias de la Salud',
+  'Administrativas',
+  'Profesiones Humanísticas',
+]
 
 const Vocational = () => {
+  const [currentTab, setCurrentTab] = useState(0)
   const {
     formValues: { defaultValues },
     isLoading,
@@ -29,34 +41,62 @@ const Vocational = () => {
     }
   }, [errors])
 
+  useEffect(() => {
+    console.log(defaultValues)
+  }, [defaultValues])
+
   return (
-    <>
-      <h2 className="font-bold capitalize text-xl">
+    <React.Fragment>
+      <h2 className="font-bold capitalize text-xl mb-3">
         Vocacional <UilCapsule className="inline-block" />
       </h2>
       <div className="mt-4addActivityToUser bg-white py-4 px-7 rounded-xl shadow-xl">
-        <div className="flex space-x-4 justify-end mb-4">
-          <span className="uppercase text-sm font-bold">Si</span>
-          <span className="uppercase text-sm font-bold">No</span>
-        </div>
-
         <form
           className="relative flex flex-col"
           onSubmit={handleSubmit(submit)}
         >
-          {VOCATIONAL_ANSWER.map((val) => (
-            <Answer
-              answer={val.answer}
-              register={register}
-              key={val.id}
-              radioID={val.id}
-              radioValue={val.value}
-              yesornot
-            />
-          ))}
+          <Tabs onSelect={(e) => setCurrentTab(e)}>
+            <TabList>
+              {tabs.map((val, idx) => (
+                <Tab
+                  key={val}
+                  style={{
+                    ...(currentTab === idx && {
+                      backgroundColor: '#4ade80',
+                      color: '#fff',
+                    }),
+                  }}
+                >
+                  {val}
+                </Tab>
+              ))}
+            </TabList>
+
+            {[...Array(7)].map((val, idx) => (
+              <TabPanel key={idx}>
+                <div className="flex space-x-4 justify-end mb-4">
+                  <span className="uppercase text-sm font-bold">Si</span>
+                  <span className="uppercase text-sm font-bold">No</span>
+                </div>
+                {VOCATIONAL_ANSWER.slice(
+                  Number(`${idx}0`),
+                  Number(`${idx + 1}0`)
+                ).map((val) => (
+                  <Answer
+                    answer={val.answer}
+                    register={register}
+                    key={val.id}
+                    radioID={val.id}
+                    radioValue={val.value}
+                    yesornot
+                  />
+                ))}
+              </TabPanel>
+            ))}
+          </Tabs>
           <div className="w-full mt-2">
             <button
-              className="bg-blue-300 w-full p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-blue-400 transition-all"
+              className="bg-green-300 w-full p-2 rounded-lg font-semibold text-gray-50 hover:text-white hover:bg-green-400 transition-all disabled:bg-gray-500 disabled:cursor-not-allowed"
               type="submit"
               disabled={isLoading}
             >
@@ -77,7 +117,7 @@ const Vocational = () => {
           </a>
         </div>
       </div>
-    </>
+    </React.Fragment>
   )
 }
 

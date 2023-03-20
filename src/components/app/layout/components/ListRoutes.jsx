@@ -16,6 +16,11 @@ const NAVLINK_ROUTES = [
     icon: <UilEstate />,
     link: '/',
   },
+  // {
+  //   name: 'tendencias',
+  //   icon: <UilEstate />,
+  //   link: '/uwu',
+  // },
   {
     name: 'Encuestas',
     icon: <UilFileGraph />,
@@ -56,7 +61,9 @@ export const ListRoutes = () => {
             }
             className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
             style={({ isActive }) => {
-              return isActive ? { backgroundColor: '#f3f4f6' } : undefined
+              return isActive
+                ? { backgroundColor: '#4ade80', color: '#fff' }
+                : undefined
             }}
           >
             {val.icon}

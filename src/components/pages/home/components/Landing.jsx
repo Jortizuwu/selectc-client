@@ -26,7 +26,7 @@ export const Landing = () => {
           {!currentUser && (
             <button
               onClick={handleCloseModal}
-              className="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto"
+              className="mt-6 rounded-lg bg-green-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-green-500 focus:outline-none lg:mx-0 lg:w-auto"
             >
               click aquí para regístrarse ahora
             </button>

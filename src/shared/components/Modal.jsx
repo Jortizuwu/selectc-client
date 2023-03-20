@@ -11,7 +11,7 @@ export const Modal = ({ children }) => {
 
   return (
     <div className="bg-slate-400 bg-opacity-50 flex items-center justify-center absolute w-screen h-screen z-50">
-      <div className="bg-white border-2 border-blue-300 shadow-lg w-full p-4 rounded-xl md:w-1/2 lg:w-1/3">
+      <div className="bg-white border-2 border-green-300 shadow-lg w-full p-4 rounded-xl md:w-1/2 lg:w-1/3">
         <div className="flex justify-end border-b border-gray-200 py-3">
           <button
             onClick={handleCloseModal}

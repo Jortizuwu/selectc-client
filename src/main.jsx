@@ -7,6 +7,7 @@ import App from './components/app/routes'
 import ReduxProvider from './redux/provider/ReduxProvider'
 
 import './index.css'
+import 'react-tabs/style/react-tabs.css'
 import { client } from './shared/common/api'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

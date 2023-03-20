@@ -3,6 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   modalIsOpen: false,
   dropMenu: false,
+  sidebar: {
+    isOpen: false,
+    isHover: false,
+  },
 }
 
 export const uiSlice = createSlice({
@@ -14,6 +18,9 @@ export const uiSlice = createSlice({
     },
     dropMenuAction: (state) => {
       state.dropMenu = !state.dropMenu
+    },
+    sibarBarAction: (state) => {
+      state.sidebar.isOpen = !state.sidebar.isOpen
     },
   },
 })

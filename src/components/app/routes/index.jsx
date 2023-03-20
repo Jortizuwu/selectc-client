@@ -1,5 +1,5 @@
 // import { useMutation } from '@apollo/client'
-import { lazy, Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -13,9 +13,9 @@ const Carrers = lazy(() => import('../../pages/careers'))
 const Carrer = lazy(() => import('../../pages/careers/components/Career'))
 const Surveys = lazy(() => import('../../pages/surveys'))
 const PageNotFound = lazy(() => import('../../pages/404'))
-const Personality = lazy(() =>
-  import('../../pages/surveys/components/Personality')
-)
+// const Personality = lazy(() =>
+//   import('../../pages/surveys/components/Personality')
+// )
 const Preferences = lazy(() =>
   import('../../pages/surveys/components/Preferences')
 )
@@ -31,18 +31,17 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-
             {currentUser && (
-              <>
+              <React.Fragment>
                 <Route path="surveys" element={<Surveys />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="careers" element={<Carrers />} />
                 <Route path="careers/:id" element={<Carrer />} />
                 <Route path="user/:uid" element={<User />} />
-                <Route path="surveys/personality" element={<Personality />} />
+                {/* <Route path="surveys/personality" element={<Personality />} /> */}
                 <Route path="surveys/preferences" element={<Preferences />} />
                 <Route path="surveys/vocational" element={<Vocational />} />
-              </>
+              </React.Fragment>
             )}
           </Route>
           <Route path="*" element={<PageNotFound />} />

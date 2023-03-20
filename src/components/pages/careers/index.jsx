@@ -62,7 +62,7 @@ const Careers = () => {
           </p>
           <Link
             to="/surveys"
-            className="mt-4 bg-blue-300 p-2 rounded-md text-white font-semibold hover:bg-blue-400"
+            className="mt-4 bg-green-300 p-2 rounded-md text-white font-semibold hover:bg-green-400"
           >
             <span>Ir a las encuestas</span>
           </Link>
