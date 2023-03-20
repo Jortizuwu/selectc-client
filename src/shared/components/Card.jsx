@@ -18,9 +18,9 @@ const Card = ({ title, type, to = '/' }) => {
           <h2 className="text-sm md:text-xl font-bold">{type}</h2>
         </div>
       </section>
-      <div className="text-gray-500 text-xs md:text-base">
+      <div className="text-gray-500 text-xs md:text-base space-y-3">
         <span>Encuesta para conocer su {type}</span>
-        <p className="text-red-400">
+        <p className="text-red-400 text-xs">
           Si ya ha realizado esta encuesta y la vuelve a hacer, los datos de la
           anterior encuesta se sobrescribirá
         </p>

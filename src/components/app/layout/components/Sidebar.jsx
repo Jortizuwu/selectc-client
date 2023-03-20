@@ -55,7 +55,7 @@ export const Sidebar = () => {
           <ul className="space-y-2 relative h-full pt-16">
             <ListRoutes />
 
-            <div className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md w-full absolute bottom-0">
+            <div className="flex items-center justify-between rounded-lg bg-white p-2 shadow-md w-full absolute bottom-0">
               {isCollapse ? (
                 <React.Fragment>
                   <div className="flex flex-col justify-center items-center">

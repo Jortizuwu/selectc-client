@@ -55,14 +55,16 @@ export const UseDefaultValues = () => {
 
   const mutate = async (values) => {
     try {
+      console.log(values)
       const arrPreferences = Object.values(values).filter(
         (val) => val !== 'Not'
       )
-      const { data } = await add({ variables: { arrPreferences } })
-      console.log(data)
+      await add({ variables: { arrPreferences } })
+      window.localStorage.removeItem('preferencesDefaultValues')
       Notify('preferences add')
       navigate(`/user/${uid}`)
     } catch (error) {
+      console.log(error)
       Notify('opps! something doesn`t seem to be right', 'error')
       return error
     }
@@ -73,7 +75,9 @@ export const UseDefaultValues = () => {
     submit: mutate,
     error,
     formValues: {
-      defaultValues: initialValues,
+      defaultValues: window.localStorage.getItem('preferencesDefaultValues')
+        ? JSON.parse(window.localStorage.getItem('preferencesDefaultValues'))
+        : initialValues,
       formProps: {},
     },
   }

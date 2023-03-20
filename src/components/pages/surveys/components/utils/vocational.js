@@ -183,6 +183,7 @@ export const UseDefaultValues = () => {
       await add({
         variables: { arrActivities: arrActivities[0] },
       })
+      window.localStorage.removeItem('vocationalDefaultValues')
       Notify('activities vocationals add')
       navigate(`/user/${uid}`)
     } catch (error) {
@@ -196,7 +197,9 @@ export const UseDefaultValues = () => {
     submit: mutate,
     error,
     formValues: {
-      defaultValues: initialValues,
+      defaultValues: window.localStorage.getItem('vocationalDefaultValues')
+        ? JSON.parse(window.localStorage.getItem('vocationalDefaultValues'))
+        : initialValues,
       formProps: {},
     },
   }

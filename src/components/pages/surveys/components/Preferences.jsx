@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React, { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, useWatch } from 'react-hook-form'
 import { UilClipboardAlt, UilCapsule } from '@iconscout/react-unicons'
 
 import { Answer } from './Answer'
@@ -24,20 +24,28 @@ const Preferences = () => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues,
   })
+
+  const data = useWatch({
+    defaultValue: defaultValues,
+    control,
+  })
+  useEffect(() => {
+    window.localStorage.setItem(
+      'preferencesDefaultValues',
+      JSON.stringify(data)
+    )
+  }, [data])
 
   useEffect(() => {
     if (Object.values(errors).length > 0) {
       Notify('Debe seleccionar todas las casillas', 'error')
     }
   }, [errors])
-
-  useEffect(() => {
-    console.log(defaultValues)
-  }, [defaultValues])
 
   return (
     <>

@@ -24,6 +24,7 @@ const YesOrNot = ({ register, radioID, radioValue }) => {
 }
 
 const FiveOptions = ({ register, radioID }) => {
+  console.log(register)
   return (
     <>
       <input
