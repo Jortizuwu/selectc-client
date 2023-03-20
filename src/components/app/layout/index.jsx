@@ -10,6 +10,7 @@ import { Sidebar } from './components/Sidebar'
 
 const Layout = () => {
   const { modalIsOpen } = useSelector((state) => state.ui)
+  const { isCollapse } = useSelector((state) => state.ui)
 
   useEffect(() => {
     const openPublication = () => {
@@ -30,7 +31,11 @@ const Layout = () => {
         </Modal>
       )}
       <Sidebar />
-      <div className="bg-gray-50 min-h-screen h-full flex flex-col md:ml-64">
+      <div
+        className={`bg-gray-50 min-h-screen h-full flex flex-col ${
+          isCollapse ? 'md:ml-64' : 'md:ml-16'
+        }`}
+      >
         <Navbar />
         <div className="my-2 w-11/12 mx-auto">
           <Outlet />

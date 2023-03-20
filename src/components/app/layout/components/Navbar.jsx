@@ -22,7 +22,7 @@ export const Navbar = () => {
   }, [pathname])
 
   return (
-    <nav className="w-full flex justify-between items-center mx-auto p-3 md:px-8">
+    <nav className="w-full flex justify-between items-center mx-auto p-3 md:px-4">
       <div className="inline-flex">
         <Link to="/">
           <Logo postion="relative" />

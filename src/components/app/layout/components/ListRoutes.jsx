@@ -16,35 +16,31 @@ const NAVLINK_ROUTES = [
     icon: <UilEstate />,
     link: '/',
   },
-  // {
-  //   name: 'tendencias',
-  //   icon: <UilEstate />,
-  //   link: '/uwu',
-  // },
   {
     name: 'Encuestas',
     icon: <UilFileGraph />,
-    link: '/surveys',
+    link: 'surveys',
   },
   {
     name: 'Carreras',
     icon: <UilGraduationCap />,
-    link: '/careers',
+    link: 'careers',
   },
   {
     name: 'Configuración',
     icon: <UilSetting />,
-    link: '/settings',
+    link: 'settings',
   },
   {
     name: 'Perfil',
     icon: <UilUser />,
-    link: '/user',
+    link: 'user',
   },
 ]
 
 export const ListRoutes = () => {
   const { currentUser } = useSelector((state) => state.user)
+  const { isCollapse } = useSelector((state) => state.ui)
 
   return (
     <>
@@ -67,9 +63,11 @@ export const ListRoutes = () => {
             }}
           >
             {val.icon}
-            <span className="ml-3 text-xs lg:text-base font-medium">
-              {val.name}
-            </span>
+            {isCollapse && (
+              <span className="ml-3 text-xs lg:text-base font-medium">
+                {val.name}
+              </span>
+            )}
           </NavLink>
         </li>
       ))}
