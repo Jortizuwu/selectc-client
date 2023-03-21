@@ -7,7 +7,7 @@ const Card = ({ title, type, to = '/' }) => {
   return (
     <Link
       to={to}
-      className="rounded-3xl p-4 bg-white shadow-xl cursor-pointer hover:shadow-none transition-all"
+      className="rounded-3xl p-4 bg-white shadow-lg cursor-pointer hover:shadow-none transition-all"
     >
       <section className="flex items-center justify-between">
         <div className="bg-green-300 rounded-full w-12 h-12 flex items-center">

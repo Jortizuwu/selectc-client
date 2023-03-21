@@ -32,12 +32,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="trending" element={<Trending />} />
             {currentUser && (
               <React.Fragment>
                 <Route path="surveys" element={<Surveys />} />
                 <Route path="results" element={<Results />} />
                 <Route path="careers" element={<Carrers />} />
-                <Route path="trending" element={<Trending />} />
                 <Route path="careers/:id" element={<Carrer />} />
                 <Route path="user/:uid" element={<User />} />
                 <Route path="surveys/preferences" element={<Preferences />} />

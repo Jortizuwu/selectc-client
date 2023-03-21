@@ -56,7 +56,7 @@ const Vocational = () => {
       <h2 className="font-bold capitalize text-xl mb-3">
         Vocacional <UilCapsule className="inline-block" />
       </h2>
-      <div className="mt-4addActivityToUser bg-white py-4 px-7 rounded-xl shadow-xl">
+      <div className="mt-4addActivityToUser bg-white py-4 px-7 rounded-xl shadow-lg">
         <form
           className="relative flex flex-col"
           onSubmit={handleSubmit(submit)}

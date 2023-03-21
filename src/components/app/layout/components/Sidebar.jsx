@@ -49,13 +49,13 @@ export const Sidebar = () => {
         className="h-full transition-all"
         aria-label="Sidebar"
       >
-        <div className="px-3 py-4 shadow-md overflow-y-auto bg-white h-full">
+        <div className="px-3 py-4 shadow-lg overflow-y-auto bg-white h-full">
           <Logo />
 
           <ul className="space-y-2 relative h-full pt-16">
             <ListRoutes />
 
-            <div className="flex items-center justify-between rounded-lg bg-white p-2 shadow-md w-full absolute bottom-0">
+            <div className="flex items-center justify-between rounded-lg bg-white p-2 shadow-lg w-full absolute bottom-0">
               {isCollapse ? (
                 <React.Fragment>
                   <div className="flex flex-col justify-center items-center">

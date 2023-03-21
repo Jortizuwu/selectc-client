@@ -56,7 +56,7 @@ export const Coincidence = ({ careers, preferences, activities }) => {
       </h2>
 
       {preferences.length === 0 || activities.length === 0 ? (
-        <div className="p-4 shadow-md rounded-md ">
+        <div className="p-4 shadow-lg rounded-md ">
           <p>
             Hola una vez que completes todos los encuestas, podrás visualizar la
             posible carrera que deberías estudiar, esto basado en datos

@@ -15,7 +15,7 @@ const Form = () => {
                   type="text"
                   name="fName"
                   id="fName"
-                  className="w-full rounded-md py-3 px-6 bg-slate-100 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full rounded-md py-3 px-6 bg-slate-100 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg"
                 />
               </div>
             </div>
@@ -28,7 +28,7 @@ const Form = () => {
                   type="text"
                   name="lName"
                   id="lName"
-                  className="w-full bg-slate-100  rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                  className="w-full bg-slate-100  rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg"
                 />
               </div>
             </div>
@@ -42,7 +42,7 @@ const Form = () => {
               name="guest"
               id="guest"
               min="0"
-              className="w-full bg-slate-100  rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              className="w-full bg-slate-100  rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg"
             />
           </div>
 
@@ -52,7 +52,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
             <div className="w-full px-3 md:w-1/2">
@@ -60,7 +60,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
             <div className="w-full px-3 md:w-1/2">
@@ -109,7 +109,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
             <div className="w-full px-3 md:w-1/2">
@@ -127,7 +127,7 @@ const Form = () => {
                 <label className="mb-3 block text-base font-medium text-[#07074D]">
                   Pregunta
                 </label>
-                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                <input className="bg-slate-100  w-full rounded-md border border-[#e0e0e0]  py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-lg" />
               </div>
             </div>
           </div>

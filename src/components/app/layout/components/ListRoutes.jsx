@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   UilAnalytics,
-  // UilEstate,
+  UilEstate,
   UilArrowGrowth,
   UilUser,
   UilFileInfoAlt,
@@ -12,11 +12,11 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 const NAVLINK_ROUTES = [
-  // {
-  //   name: 'Inicio',
-  //   icon: <UilEstate />,
-  //   link: '/',
-  // },
+  {
+    name: 'Inicio',
+    icon: <UilEstate />,
+    link: '/',
+  },
   {
     name: 'Tendencias',
     icon: <UilArrowGrowth />,

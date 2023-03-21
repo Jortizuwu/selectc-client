@@ -42,7 +42,7 @@ export const Activities = ({ data }) => {
           to="/surveys/vocational"
         />
       ) : (
-        <div className="rounded-3xl p-4 bg-white shadow-xl">
+        <div className="rounded-3xl p-4 bg-white shadow-lg">
           <Bar options={options} data={data} />
         </div>
       )}
