@@ -144,3 +144,56 @@ table tbody tr:last-child td {
   color: #4b4b62;
   margin-bottom: 24px;
 }
+.typing-text {
+  display: inline-block;
+  position: relative;
+  /* width: 10em; */
+  /* font-size: 2em; */
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  right: -0.1em;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* .typed {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 0;
+  animation: typing 1.5s steps(30, end) forwards, blinking 1s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+  100% {
+    border-color: transparent;
+  }
+} */

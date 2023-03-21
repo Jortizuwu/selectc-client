@@ -27,26 +27,21 @@ export const Sidebar = () => {
 
   const handleLogOut = () => {
     dispatch(removeUser())
-    localStorage.removeItem('token')
+    localStorage.clear()
     if (!EXCLUDE_NAVIGATE.includes(pathname)) navigate('/')
   }
-  // useEffect(() => {
-  //   if (isOpenSidebar) {
-  //     onCloseSidebar()
-  //   }
-  // }, [pathname])
 
   const hoverEnter = () => dispatch(handleHoverEnter())
 
   const hoverLeave = () => dispatch(handleHoverLeave())
 
   return (
-    <div className="h-screen hidden md:block fixed z-20">
+    <div className="h-screen hidden md:block fixed z-20  ">
       <aside
         onMouseEnter={hoverEnter}
         onMouseLeave={hoverLeave}
         style={{ width: isCollapse ? '16rem' : '4rem' }}
-        className="h-full transition-all"
+        className="h-full transition-all absolute"
         aria-label="Sidebar"
       >
         <div className="px-3 py-4 shadow-lg overflow-y-auto bg-white h-full">
