@@ -17,6 +17,11 @@ const NAVLINK_ROUTES = [
     link: '/',
   },
   {
+    name: 'Tendencias',
+    icon: <UilEstate />,
+    link: '/trending',
+  },
+  {
     name: 'Encuestas',
     icon: <UilFileGraph />,
     link: 'surveys',

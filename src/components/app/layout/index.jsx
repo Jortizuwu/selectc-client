@@ -15,6 +15,7 @@ const Layout = () => {
   useEffect(() => {
     const openPublication = () => {
       if (modalIsOpen) {
+        window.scrollTo(0, 0)
         document.body.style.overflow = 'hidden'
       } else {
         document.body.style.overflow = ''

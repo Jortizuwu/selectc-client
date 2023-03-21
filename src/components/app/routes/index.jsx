@@ -10,6 +10,7 @@ const Home = lazy(() => import('../../pages/home'))
 const User = lazy(() => import('../../pages/user'))
 const Settings = lazy(() => import('../../pages/settings'))
 const Carrers = lazy(() => import('../../pages/careers'))
+const Trending = lazy(() => import('../../pages/trending'))
 const Carrer = lazy(() => import('../../pages/careers/components/Career'))
 const Surveys = lazy(() => import('../../pages/surveys'))
 const PageNotFound = lazy(() => import('../../pages/404'))
@@ -36,9 +37,9 @@ const App = () => {
                 <Route path="surveys" element={<Surveys />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="careers" element={<Carrers />} />
+                <Route path="trending" element={<Trending />} />
                 <Route path="careers/:id" element={<Carrer />} />
                 <Route path="user/:uid" element={<User />} />
-                {/* <Route path="surveys/personality" element={<Personality />} /> */}
                 <Route path="surveys/preferences" element={<Preferences />} />
                 <Route path="surveys/vocational" element={<Vocational />} />
               </React.Fragment>
