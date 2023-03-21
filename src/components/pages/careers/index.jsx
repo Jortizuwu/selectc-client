@@ -34,11 +34,11 @@ const faculties = {
     'Tecnologia en Regencia y Farmacia',
     'Administración en Salud	',
   ],
-  'Ciencias basicas': [
+  'Ciencias Basicas': [
     'Estadistica',
     'Matemáticas',
     'Geografía',
-    'Física	',
+    'Física',
     'Química',
     'Biología',
   ],
@@ -49,7 +49,7 @@ const faculties = {
     'Licenciatura en Literatura y Lengua Castellana',
     'Licenciatura en informática',
     'Licenciatura en Lengua Extrangera con Enfasis en Ingles',
-    'Licenciatura en Ciencias Naturales y Educacion Ambiental',
+    'Licenciatura en ciencias naturales y educación ambiental',
     'Licenciatura en educación infantil',
   ],
   Agronoma: ['Acuicultura'],
@@ -89,8 +89,6 @@ const Careers = () => {
       faculty: findFaculty(val.name),
     })).sort((a, b) => b.coincidenceValue - a.coincidenceValue)
   }, [user])
-
-  console.log(data)
 
   if (isLoading) {
     return (
