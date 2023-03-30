@@ -68,7 +68,7 @@ export const Coincidence = ({ careers, preferences, activities }) => {
           userData
         )}, caul de de estas carreras deberia de estudar ${JSON.stringify(
           CAREERS
-        )}, escoge 3 y porque a cada carrera dale un valor entre 0 y 1 que final al sumar los valores de 1`,
+        )}, escoge 4 y porque a cada carrera dale un valor entre 0 y 1 que final al sumar los valores de 1`,
         temperature: 0.7,
         max_tokens: 1560,
         top_p: 1,
@@ -77,7 +77,7 @@ export const Coincidence = ({ careers, preferences, activities }) => {
         stop: [' Human:', ' AI:'],
       })
       localStorage.setItem('gptMsg', response.data.choices[0].text)
-      // window.location.reload()
+      window.location.reload()
       setIsLoading(false)
     } catch (error) {
       console.log(error)

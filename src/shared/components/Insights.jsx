@@ -26,8 +26,8 @@ ChartJS.register(
 
 const Insights = ({ careers }) => {
   return (
-    <section className="flex justify-between items-center gap-4">
-      <div className="col-span-2 rounded-3xl p-4 bg-white shadow-lg">
+    <section className="grid grid-cols-2 gap-4">
+      <div className="rounded-3xl p-4 bg-white shadow-lg">
         <section className="flex items-center justify-between">
           <div className="bg-green-300 rounded-full w-12 h-12 flex items-center">
             <UilBackpack className="text-center w-auto mx-auto" />
@@ -40,7 +40,7 @@ const Insights = ({ careers }) => {
 
         <Radar data={careers} />
       </div>
-      <div className="col-span-2 rounded-3xl p-4 bg-white shadow-lg">
+      <div className="rounded-3xl p-4 bg-white shadow-lg">
         <section className="flex items-center justify-between">
           <div className="bg-green-300 rounded-full w-12 h-12 flex items-center">
             <UilBackpack className="text-center w-auto mx-auto" />

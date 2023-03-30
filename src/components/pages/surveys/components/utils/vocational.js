@@ -175,13 +175,14 @@ export const UseDefaultValues = () => {
       arrActivities.push(
         Object.keys(value).map((e) => ({
           name: e,
-          userValue: value[e],
+          userValue: value[e] * 2,
         }))
       )
+
       await add({
         variables: { arrActivities: arrActivities[0] },
       })
-      window.localStorage.removeItem('vocationalDefaultValues')
+      // window.localStorage.removeItem('vocationalDefaultValues')
       Notify('activities vocationals add')
       navigate('/results')
     } catch (error) {
