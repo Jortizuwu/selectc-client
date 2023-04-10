@@ -201,7 +201,7 @@ const DATA = [
 
 const Trending = ({ faculty = 'Ciencias Economicas y Juridicas' }) => {
   return (
-    <div className="recent-oders text-xs md:text-base mt-10">
+    <div className="recent-oders text-xs md:text-base mt-10 blur-in">
       <table className="overflow-x-auto overflow-hidden p-2 text-sm mt-10">
         <thead className="border-b">
           <tr>

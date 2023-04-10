@@ -73,7 +73,7 @@ export const Login = ({ handelChange }) => {
             </a> */}
           </div>
           <div className="text-center mb-3">
-            <span className="text-xs text-gray-400 font-semibold">
+            <span className="text-xs text-gray-400 font-semibold mr-2">
               ¿No tienes cuenta?
             </span>
             <button

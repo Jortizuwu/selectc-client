@@ -139,7 +139,7 @@ const Careers = () => {
         {[...Array(6)].map((val, idx) => (
           <TabPanel key={idx}>
             {data.length > 0 ? (
-              <div className="grid md:grid-cols-2 gap-3">
+              <div className="grid md:grid-cols-2 gap-3 blur-in">
                 {data
                   .filter((val) => val.faculty === FACULTIES[idx])
                   .map((val) => (
@@ -152,7 +152,7 @@ const Careers = () => {
                   ))}
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 gap-3">
+              <div className="grid md:grid-cols-2 gap-3 blur-in">
                 {dataCareers
                   .filter((val) => val.faculty === FACULTIES[idx])
                   .map((val) => (

@@ -22,7 +22,7 @@ export const Sidebar = () => {
   const { pathname } = useLocation()
 
   const handleSignout = () => {
-    dispatch(modalAction())
+    dispatch(modalAction('Inicia sesión'))
   }
 
   const handleLogOut = () => {
@@ -36,12 +36,12 @@ export const Sidebar = () => {
   const hoverLeave = () => dispatch(handleHoverLeave())
 
   return (
-    <div className="h-screen hidden md:block fixed z-20  ">
+    <div className="h-screen hidden md:block fixed z-20">
       <aside
         onMouseEnter={hoverEnter}
         onMouseLeave={hoverLeave}
         style={{ width: isCollapse ? '16rem' : '4rem' }}
-        className="h-full transition-all absolute"
+        className="h-full transition-all fixed"
         aria-label="Sidebar"
       >
         <div className="px-3 py-4 shadow-lg overflow-y-auto bg-white h-full">
@@ -67,7 +67,7 @@ export const Sidebar = () => {
                   <section className="flex items-center justify-center">
                     <button
                       onClick={currentUser ? handleLogOut : handleSignout}
-                      className="hover:bg-red-200  hover:text-white transition-all font-bold p-2 text-sm rounded-md"
+                      className="hover:bg-slate-200 transition-all font-bold p-2 text-sm rounded-md"
                     >
                       {currentUser ? (
                         <React.Fragment>

@@ -9,7 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import { Sidebar } from './components/Sidebar'
 
 const Layout = () => {
-  const { modalIsOpen } = useSelector((state) => state.ui)
+  const { modalIsOpen } = useSelector((state) => state?.ui?.modal)
 
   useEffect(() => {
     const openPublication = () => {
@@ -24,16 +24,16 @@ const Layout = () => {
   }, [modalIsOpen])
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative blur-in">
       {modalIsOpen && (
         <Modal>
           <Auth />
         </Modal>
       )}
       <Sidebar />
-      <div className="bg-gray-50 min-h-screen h-full flex flex-col md:ml-16">
+      <div className="bg-gray-50 h-screen overflow-y-scroll flex flex-col md:ml-16">
         <Navbar />
-        <div className="my-2 w-11/12 mx-auto">
+        <div className="my-2 w-11/12 mx-auto blur-in">
           <Outlet />
         </div>
       </div>

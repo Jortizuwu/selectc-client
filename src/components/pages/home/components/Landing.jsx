@@ -7,7 +7,7 @@ export const Landing = () => {
   const dispatch = useDispatch()
 
   const handleCloseModal = () => {
-    dispatch(modalAction())
+    dispatch(modalAction('Inicia sesión'))
   }
 
   return (
