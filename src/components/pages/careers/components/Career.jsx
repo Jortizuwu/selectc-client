@@ -27,7 +27,7 @@ const Career = () => {
           {data?.getCareerById?.career?.name}
         </h1>
         <span className="">
-          Duración: {data?.getCareerById?.career?.duration} semestres
+          Duración: {data?.getCareerById?.career?.duration} años
         </span>
         <span className="">
           Materias: {data?.getCareerById?.career?.matters}

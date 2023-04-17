@@ -28,10 +28,13 @@ export const Register = ({ handleChange }) => {
   return (
     <div className="flex w-full flex-wrap content-center justify-center bg-white">
       <div className="w-auto">
+        <small className="text-gray-400">
+          ¡Bienvenido! Por favor, introduzca sus datos
+        </small>
         <form
           autoComplete="off"
           onSubmit={handleSubmit(submit)}
-          className="mt-4"
+          className="mt-4 p-4"
         >
           <div className="flex space-x-3">
             <div className="mb-3">

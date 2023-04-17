@@ -48,7 +48,7 @@ export const UseDefaultValues = () => {
       if (error) throw new Error(error)
       localStorage.setItem('token', data.createUser.token)
       dispatch(authUser(data.createUser.user))
-      dispatch(modalAction())
+      dispatch(modalAction(''))
       Notify('user created success')
     } catch (error) {
       Notify(error?.message, 'error')

@@ -24,6 +24,7 @@ const YesOrNot = ({ register, radioID, radioValue }) => {
 }
 
 const FiveOptions = ({ register, radioID }) => {
+  console.log(register)
   return (
     <>
       <input
@@ -79,7 +80,9 @@ export const Answer = ({
 }) => {
   return (
     <div
-      className={`mb-5 grid ${!yesornot ? 'md:grid-cols-3' : 'grid-cols-3'} `}
+      className={`blur-in mb-5 grid ${
+        !yesornot ? 'md:grid-cols-3' : 'grid-cols-3'
+      } `}
     >
       <label
         className={`mb-3  ${

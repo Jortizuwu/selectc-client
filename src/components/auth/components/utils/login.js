@@ -26,7 +26,7 @@ export const UseDefaultValues = () => {
       if (error) throw new Error(error)
       dispatch(authUser(data.loginWhitEmailAndPassword.user))
       localStorage.setItem('token', data.loginWhitEmailAndPassword.token)
-      dispatch(modalAction())
+      dispatch(modalAction(''))
       Notify('Welcome back')
     } catch (error) {
       Notify(error?.message, 'error')

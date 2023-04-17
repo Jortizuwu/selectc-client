@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  modalIsOpen: false,
+  modal: {
+    modalIsOpen: false,
+    title: '',
+  },
   dropMenu: false,
   collapse: { click: false, hover: false },
   isCollapse: false,
@@ -11,8 +14,9 @@ export const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    modalAction: (state) => {
-      state.modalIsOpen = !state.modalIsOpen
+    modalAction: (state, action) => {
+      state.modal.modalIsOpen = !state.modal.modalIsOpen
+      state.modal.title = action.payload
     },
     dropMenuAction: (state) => {
       state.dropMenu = !state.dropMenu

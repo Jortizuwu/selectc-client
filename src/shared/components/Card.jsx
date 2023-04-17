@@ -7,7 +7,7 @@ const Card = ({ title, type, to = '/' }) => {
   return (
     <Link
       to={to}
-      className="rounded-3xl p-4 bg-white shadow-xl cursor-pointer hover:shadow-none transition-all"
+      className="rounded-3xl p-4 bg-white shadow-lg cursor-pointer hover:shadow-none transition-all"
     >
       <section className="flex items-center justify-between">
         <div className="bg-green-300 rounded-full w-12 h-12 flex items-center">
@@ -18,9 +18,9 @@ const Card = ({ title, type, to = '/' }) => {
           <h2 className="text-sm md:text-xl font-bold">{type}</h2>
         </div>
       </section>
-      <div className="text-gray-500 text-xs md:text-base">
+      <div className="text-gray-500 text-xs md:text-base space-y-3">
         <span>Encuesta para conocer su {type}</span>
-        <p className="text-red-400">
+        <p className="text-red-400 text-xs">
           Si ya ha realizado esta encuesta y la vuelve a hacer, los datos de la
           anterior encuesta se sobrescribirá
         </p>

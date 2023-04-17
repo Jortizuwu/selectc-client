@@ -22,19 +22,14 @@ export const Sidebar = () => {
   const { pathname } = useLocation()
 
   const handleSignout = () => {
-    dispatch(modalAction())
+    dispatch(modalAction('Inicia sesión'))
   }
 
   const handleLogOut = () => {
     dispatch(removeUser())
-    localStorage.removeItem('token')
+    localStorage.clear()
     if (!EXCLUDE_NAVIGATE.includes(pathname)) navigate('/')
   }
-  // useEffect(() => {
-  //   if (isOpenSidebar) {
-  //     onCloseSidebar()
-  //   }
-  // }, [pathname])
 
   const hoverEnter = () => dispatch(handleHoverEnter())
 
@@ -46,16 +41,16 @@ export const Sidebar = () => {
         onMouseEnter={hoverEnter}
         onMouseLeave={hoverLeave}
         style={{ width: isCollapse ? '16rem' : '4rem' }}
-        className="h-full transition-all"
+        className="h-full transition-all fixed"
         aria-label="Sidebar"
       >
-        <div className="px-3 py-4 shadow-md overflow-y-auto bg-white h-full">
+        <div className="px-3 py-4 shadow-lg overflow-y-auto bg-white h-full">
           <Logo />
 
           <ul className="space-y-2 relative h-full pt-16">
             <ListRoutes />
 
-            <div className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md w-full absolute bottom-0">
+            <div className="flex items-center justify-between rounded-lg bg-white p-2 shadow-lg w-full absolute bottom-0">
               {isCollapse ? (
                 <React.Fragment>
                   <div className="flex flex-col justify-center items-center">
@@ -72,7 +67,7 @@ export const Sidebar = () => {
                   <section className="flex items-center justify-center">
                     <button
                       onClick={currentUser ? handleLogOut : handleSignout}
-                      className="hover:bg-red-200  hover:text-white transition-all font-bold p-2 text-sm rounded-md"
+                      className="hover:bg-slate-200 transition-all font-bold p-2 text-sm rounded-md"
                     >
                       {currentUser ? (
                         <React.Fragment>

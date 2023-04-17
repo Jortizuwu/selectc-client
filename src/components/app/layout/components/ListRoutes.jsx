@@ -1,10 +1,11 @@
 import React from 'react'
 
 import {
-  UilSetting,
+  UilAnalytics,
   UilEstate,
+  UilArrowGrowth,
   UilUser,
-  UilFileGraph,
+  UilFileInfoAlt,
   UilGraduationCap,
 } from '@iconscout/react-unicons'
 import { useSelector } from 'react-redux'
@@ -17,8 +18,13 @@ const NAVLINK_ROUTES = [
     link: '/',
   },
   {
+    name: 'Tendencias',
+    icon: <UilArrowGrowth />,
+    link: 'trending',
+  },
+  {
     name: 'Encuestas',
-    icon: <UilFileGraph />,
+    icon: <UilFileInfoAlt />,
     link: 'surveys',
   },
   {
@@ -27,9 +33,9 @@ const NAVLINK_ROUTES = [
     link: 'careers',
   },
   {
-    name: 'Configuración',
-    icon: <UilSetting />,
-    link: 'settings',
+    name: 'Resultados',
+    icon: <UilAnalytics />,
+    link: 'results',
   },
   {
     name: 'Perfil',
@@ -43,34 +49,37 @@ export const ListRoutes = () => {
   const { isCollapse } = useSelector((state) => state.ui)
 
   return (
-    <>
+    <ul>
       {NAVLINK_ROUTES.slice(
         0,
         currentUser ? NAVLINK_ROUTES.length : NAVLINK_ROUTES.length - 4
       ).map((val) => (
-        <li key={val.name}>
-          <NavLink
-            to={
-              val.link.includes('user')
-                ? val.link.concat(`/${currentUser.uid}`)
-                : val.link
-            }
-            className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
-            style={({ isActive }) => {
-              return isActive
-                ? { backgroundColor: '#4ade80', color: '#fff' }
-                : undefined
-            }}
-          >
-            {val.icon}
-            {isCollapse && (
-              <span className="ml-3 text-xs lg:text-base font-medium">
-                {val.name}
-              </span>
-            )}
-          </NavLink>
-        </li>
+        <NavLink
+          key={val.name}
+          to={
+            val.link.includes('user')
+              ? val.link.concat(`/${currentUser.uid}`)
+              : val.link
+          }
+          className="flex items-center mt-2 p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
+          style={({ isActive }) => {
+            return isActive
+              ? {
+                  backgroundColor: '#4ade80',
+                  color: '#fff',
+                  fontWeight: 'bold',
+                }
+              : undefined
+          }}
+        >
+          {val.icon}
+          {isCollapse && (
+            <span className="ml-3 text-xs lg:text-base font-medium">
+              {val.name}
+            </span>
+          )}
+        </NavLink>
       ))}
-    </>
+    </ul>
   )
 }

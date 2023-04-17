@@ -7,7 +7,7 @@ export const Landing = () => {
   const dispatch = useDispatch()
 
   const handleCloseModal = () => {
-    dispatch(modalAction())
+    dispatch(modalAction('Inicia sesión'))
   }
 
   return (
@@ -34,7 +34,7 @@ export const Landing = () => {
         </div>
         <div className="mt-10 flex justify-center">
           <img
-            className="h-96 w-full rounded-xl shadow-md object-cover lg:w-4/5"
+            className="h-96 w-full rounded-xl shadow-lg object-cover lg:w-4/5"
             src="https://th.bing.com/th/id/R.deaa07f0b5b0dae0cbad41f3721b7e18?rik=pSPMjCiBa1fFBQ&riu=http%3a%2f%2fyoyvocacional.com%2fBlog%2fimage.axd%3fpicture%3d%2fwse-fb.jpg&ehk=unbKiRlPh8kRj%2fNWsNPshlUn9Zsiitt6xh62juH8XVs%3d&risl=&pid=ImgRaw&r=0"
           />
         </div>
