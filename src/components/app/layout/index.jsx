@@ -24,7 +24,7 @@ const Layout = () => {
   }, [modalIsOpen])
 
   return (
-    <div className="w-full relative blur-in">
+    <div className="w-full relative overflow-hidden blur-in">
       {modalIsOpen && (
         <Modal>
           <Auth />
@@ -33,7 +33,7 @@ const Layout = () => {
       <Sidebar />
       <div className="bg-gray-50 h-screen overflow-y-scroll flex flex-col md:ml-16">
         <Navbar />
-        <div className="my-2 w-11/12 mx-auto blur-in">
+        <div className="my-2 w-11/12 mx-auto h-full blur-in">
           <Outlet />
         </div>
       </div>

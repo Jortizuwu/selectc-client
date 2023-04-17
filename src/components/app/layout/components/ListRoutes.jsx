@@ -49,7 +49,7 @@ export const ListRoutes = () => {
   const { isCollapse } = useSelector((state) => state.ui)
 
   return (
-    <>
+    <ul>
       {NAVLINK_ROUTES.slice(
         0,
         currentUser ? NAVLINK_ROUTES.length : NAVLINK_ROUTES.length - 4
@@ -61,7 +61,7 @@ export const ListRoutes = () => {
               ? val.link.concat(`/${currentUser.uid}`)
               : val.link
           }
-          className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
+          className="flex items-center mt-2 p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 "
           style={({ isActive }) => {
             return isActive
               ? {
@@ -80,6 +80,6 @@ export const ListRoutes = () => {
           )}
         </NavLink>
       ))}
-    </>
+    </ul>
   )
 }
