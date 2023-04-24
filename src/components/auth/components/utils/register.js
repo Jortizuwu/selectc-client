@@ -8,6 +8,7 @@ import { REGISTER_USER } from '../../../../shared/graphql/mutations'
 
 export const schema = yup.object().shape({
   email: yup.string().required('the email field is required!'),
+  schoolID: yup.string().required('the school field is required!'),
   password: yup
     .string()
     .min(7, 'the password need 7 or more characters')
@@ -35,6 +36,7 @@ const initialValues = {
   lastName: '',
   name: '',
   roleName: 'USER',
+  schoolID: '',
 }
 
 export const UseDefaultValues = () => {
@@ -43,6 +45,7 @@ export const UseDefaultValues = () => {
 
   const mutate = async (values) => {
     try {
+      console.log(values)
       const { data } = await register({ variables: { ...values } })
       console.log(data)
       if (error) throw new Error(error)

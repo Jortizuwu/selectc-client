@@ -5,6 +5,17 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { schema, UseDefaultValues } from './utils/register'
 import { Spinner } from '../../../shared/components/Spinner'
 
+const SCHOOLS = [
+  {
+    schoolID: '',
+    name: 'Seleccione una escuela',
+  },
+  {
+    schoolID: 'df6dbc4f-31ee-4bad-a884-ba156aff1925',
+    name: 'Institución Educativa Camilo Torres',
+  },
+]
+
 export const Register = ({ handleChange }) => {
   const {
     formValues: { defaultValues },
@@ -111,6 +122,22 @@ export const Register = ({ handleChange }) => {
                 {errors.confirmPassword?.message}
               </p>
             </div>
+          </div>
+          <div className="mb-3">
+            <label className="mb-2 block text-xs font-semibold">Escuela</label>
+            <select
+              {...register('schoolID')}
+              className="bg-white block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+            >
+              {SCHOOLS.map((val) => (
+                <option key={val.schoolID} value={val.schoolID}>
+                  {val.name}
+                </option>
+              ))}
+            </select>
+            <p className="text-red-400 text-sm mt-2">
+              {errors.schoolID?.message}
+            </p>
           </div>
 
           <div className="text-center mb-3">
