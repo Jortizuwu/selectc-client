@@ -45,7 +45,6 @@ export const UseDefaultValues = () => {
 
   const mutate = async (values) => {
     try {
-      console.log(values)
       const { data } = await register({ variables: { ...values } })
       console.log(data)
       if (error) throw new Error(error)
@@ -54,6 +53,7 @@ export const UseDefaultValues = () => {
       dispatch(modalAction(''))
       Notify('user created success')
     } catch (error) {
+      console.log(error)
       Notify(error?.message, 'error')
       return error
     }

@@ -41,6 +41,7 @@ export const REGISTER_USER = gql`
     $email: String!
     $password: String!
     $roleName: AllRoles!
+    $schoolID: ID!
   ) {
     createUser(
       name: $name
@@ -48,6 +49,7 @@ export const REGISTER_USER = gql`
       email: $email
       password: $password
       RoleName: $roleName
+      schoolID: $schoolID
     ) {
       token
       code
