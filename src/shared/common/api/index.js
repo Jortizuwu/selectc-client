@@ -15,7 +15,7 @@ const httpLink = createHttpLink({
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: import.meta.env.VITE_API_BASE_URL_WS,
+    url: 'https://select-c.azurewebsites.net/',
   })
 )
 
