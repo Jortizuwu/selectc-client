@@ -24,9 +24,6 @@ const User = () => {
     }),
     [user]
   )
-
-  console.log(defaultValues)
-
   useEffect(() => {
     refetch()
   }, [])
