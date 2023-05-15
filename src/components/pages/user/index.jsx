@@ -16,10 +16,16 @@ const User = () => {
         income: user?.income || 0,
         lastName: user?.lastName,
         name: user?.name,
+        preferenceCareer: {
+          label: user?.preferenceCareer || '',
+          value: user?.preferenceCareer || '',
+        },
       },
     }),
     [user]
   )
+
+  console.log(defaultValues)
 
   useEffect(() => {
     refetch()

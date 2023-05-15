@@ -10,21 +10,30 @@ export const schema = yup.object().shape({
   email: yup.string().required('the email field is required!'),
   lastName: yup
     .string()
-    .min(2, 'the last name need 2 or more characters')
-    .max(20, 'maximum characters are 50')
-    .required('the last name field is required!'),
+    .min(2, 'El apellido necesita 2 o más caracteres')
+    .max(20, 'El máximo de caracteres es 50')
+    .required('¡El campo apellido es obligatorio!'),
   name: yup
     .string()
-    .min(2, 'the name need 2 or more characters')
-    .max(20, 'maximum characters are 50')
-    .required('the name field is required!'),
-  age: yup.number().max(120, 'max value is 120').min(5, 'min value is 5'),
+    .min(2, 'El nombre necesita 2 o más caracteres')
+    .max(20, 'El máximo de caracteres es 50')
+    .required('¡El campo nombre es obligatorio!'),
+  age: yup
+    .number()
+    .max(120, 'El valor máximo es 120')
+    .min(5, 'El valor mínimo es 5'),
   // oldPassword: yup.string(),
   // newPassword: yup.string(),
   // confirmPassword: yup
   //   .string()
   //   .oneOf([yup.ref('newPassword'), null], 'passwords must match'),
   gender: yup.string(),
+  preferenceCareer: yup
+    .object({
+      label: yup.string(),
+      value: yup.string(),
+    })
+    .required('La preferencia de carrera es requerido'),
   income: yup.number('number'),
 })
 
@@ -34,7 +43,12 @@ export const UseDefaultValues = () => {
 
   const mutate = async (values) => {
     try {
-      const { data } = await update({ variables: { ...values } })
+      const { data } = await update({
+        variables: {
+          ...values,
+          preferenceCareer: values.preferenceCareer.value,
+        },
+      })
       const { ...rest } = data.updateUser.user
       dispatch(authUser(rest))
       localStorage.setItem('token', data.updateUser.token)

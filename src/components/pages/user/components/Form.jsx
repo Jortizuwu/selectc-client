@@ -1,30 +1,46 @@
 import React, { useEffect } from 'react'
 
 import { UilEnvelope } from '@iconscout/react-unicons'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import Select from 'react-select'
 
 import { schema, UseDefaultValues } from './utils/form'
 import { Spinner } from '../../../../shared/components/Spinner'
 import { FieldError } from '../../../../shared/components/FieldError'
+import { useListAllCareers } from '../../../../shared/hooks/careers'
+import { useMemo } from 'react'
 
 export const Form = ({ defaultValues }) => {
   const { isLoading, submit, error } = UseDefaultValues()
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    control,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues,
   })
 
+  const { careers, isLoading: isLoandingCareers } = useListAllCareers()
+
+  const { options } = useMemo(
+    () => ({
+      options: careers
+        ?.map((val) => ({ label: val.name, value: val.name }))
+        .sort((a, b) => a.label - b.label),
+    }),
+    [careers]
+  )
+
   useEffect(() => {
     reset(defaultValues)
   }, [reset, defaultValues])
 
-  if (isLoading) {
+  if (isLoading || isLoandingCareers) {
     return (
       <div className="flex w-full h-full items-end justify-center">
         <Spinner />
@@ -69,6 +85,21 @@ export const Form = ({ defaultValues }) => {
           </div>
           <div className="lg:w-full md:w-1/2 flex flex-col mb-6">
             <label className="pb-2 text-sm font-bold text-gray-800 dark:">
+              De entre estas carreras universitarias, selecciona la que más te
+              guste o te gustaría estudiar.
+            </label>
+            <Controller
+              render={({ field }) => <Select options={options} {...field} />}
+              name="preferenceCareer"
+              control={control}
+            />
+
+            {errors?.preferenceCareer && (
+              <FieldError error={errors.preferenceCareer?.message} />
+            )}
+          </div>
+          <div className="lg:w-full md:w-1/2 flex flex-col mb-6">
+            <label className="pb-2 text-sm font-bold text-gray-800 dark:">
               Correo electrónico
             </label>
             <div className="border border-green-400 shadow-sm rounded flex mb-2">
@@ -85,6 +116,7 @@ export const Form = ({ defaultValues }) => {
             </div>
             {errors?.email && <FieldError error={errors.email?.message} />}
           </div>
+
           <div className="flex md:space-x-4 flex-col md:flex-row">
             <div className="lg:w-1/2 md:w-1/2 flex flex-col mb-6">
               <label className="pb-2 text-sm font-bold text-gray-800 dark:">
@@ -123,6 +155,7 @@ export const Form = ({ defaultValues }) => {
               {errors?.income && <FieldError error={errors.income?.message} />}
             </div>
           </div>
+
           {/* <div className='flex md:space-x-4 flex-col md:flex-row'>
             <div className='lg:w-1/2 md:w-1/2 flex flex-col mb-6'>
               <label className='pb-2 text-sm font-bold text-gray-800 dark:'>
