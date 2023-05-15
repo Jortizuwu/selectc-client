@@ -70,6 +70,7 @@ export const UPDATE_USER = gql`
     $age: Int
     $gender: String
     $income: Int
+    $preferenceCareer: String
   ) {
     updateUser(
       name: $name
@@ -78,6 +79,7 @@ export const UPDATE_USER = gql`
       age: $age
       gender: $gender
       income: $income
+      preferenceCareer: $preferenceCareer
     ) {
       success
       message
