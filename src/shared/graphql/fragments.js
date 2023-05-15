@@ -31,5 +31,6 @@ export const USER_DATA = gql`
     gender
     lastName
     income
+    preferenceCareer
   }
 `

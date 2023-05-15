@@ -51,7 +51,7 @@ export const UseDefaultValues = () => {
       })
       const { ...rest } = data.updateUser.user
       dispatch(authUser(rest))
-      localStorage.setItem('token', data.updateUser.token)
+      // localStorage.setItem('token', data.updateUser.token)
       Notify('user update')
       if (error) throw new Error(error)
     } catch (error) {

@@ -24,6 +24,7 @@ const User = () => {
     }),
     [user]
   )
+
   useEffect(() => {
     refetch()
   }, [])
