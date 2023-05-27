@@ -21,13 +21,14 @@ const Results = () => {
       preferences: user?.Preferences,
       activities: user?.Activities,
       dataCareers: {
-        labels: user?.Careers.map((val) => ({
-          name: val.name,
-          coincidenceValue: val.user_has_career.coincidenceValue,
-        }))
-          .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
-          .map((val) => val.name)
-          .slice(0, 6),
+        labels:
+          user?.Careers.map((val) => ({
+            name: val.name,
+            coincidenceValue: val.user_has_career.coincidenceValue,
+          }))
+            .sort((a, b) => b.coincidenceValue - a.coincidenceValue)
+            .map((val) => val.name)
+            .slice(0, 6) || [],
         possible: user?.Careers.map((val) => ({
           name: val.name,
           coincidenceValue: val.user_has_career.coincidenceValue,
@@ -58,7 +59,7 @@ const Results = () => {
         ],
       },
       data: {
-        labels: user?.Activities.map((val) => val.name),
+        labels: user?.Activities.map((val) => val.name) || [],
         datasets: [
           {
             label: ['user value'],

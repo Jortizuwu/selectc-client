@@ -38,3 +38,29 @@ export const GET_CARRER_BY_ID = gql`
     }
   }
 `
+export const ANALITY = gql`
+  query anality {
+    getSuccessfulPreferencesForFaculties {
+      data {
+        correct
+        unsuccessful
+      }
+      code
+    }
+    getSuccessfulPreferences {
+      data {
+        correct
+        unsuccessful
+      }
+      code
+    }
+    getMostFrequentCareers {
+      code
+      data
+    }
+    getMostFrequentFaculties {
+      code
+      data
+    }
+  }
+`

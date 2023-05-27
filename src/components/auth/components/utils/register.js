@@ -46,7 +46,6 @@ export const UseDefaultValues = () => {
   const mutate = async (values) => {
     try {
       const { data } = await register({ variables: { ...values } })
-      console.log(data)
       if (error) throw new Error(error)
       localStorage.setItem('token', data.createUser.token)
       dispatch(authUser(data.createUser.user))

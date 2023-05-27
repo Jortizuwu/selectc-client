@@ -10,7 +10,10 @@ import { GraphQLWsLink } from '@apollo/client/link/subscriptions'
 import { createClient } from 'graphql-ws'
 
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_API_BASE_URL,
+  uri:
+    import.meta.env.MODE === 'development'
+      ? import.meta.env.VITE_API_BASE_URL_DEV
+      : import.meta.env.VITE_API_BASE_URL_PRO,
 })
 
 const wsLink = new GraphQLWsLink(

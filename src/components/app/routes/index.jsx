@@ -15,6 +15,7 @@ const Layout = lazy(() => import('../layout'))
 const Home = lazy(() => import('../../pages/home'))
 const User = lazy(() => import('../../pages/user'))
 const Results = lazy(() => import('../../pages/results'))
+const Anality = lazy(() => import('../../pages/anality'))
 const Carrers = lazy(() => import('../../pages/careers'))
 const Trending = lazy(() => import('../../pages/trending'))
 const Carrer = lazy(() => import('../../pages/careers/components/Career'))
@@ -32,6 +33,8 @@ const PrivateRoute = () => {
 }
 
 const App = () => {
+  const { currentUser } = useSelector((state) => state.user)
+
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
@@ -41,12 +44,15 @@ const App = () => {
             <Route path="trending" element={<Trending />} />
             <Route element={<PrivateRoute />}>
               <Route path="surveys" element={<Surveys />} />
-              <Route path="results" element={<Results />} />
               <Route path="careers" element={<Carrers />} />
               <Route path="careers/:id" element={<Carrer />} />
               <Route path="user/:uid" element={<User />} />
+              <Route path="results" element={<Results />} />
               <Route path="surveys/preferences" element={<Preferences />} />
               <Route path="surveys/vocational" element={<Vocational />} />
+              {currentUser?.Role?.name === 'ADMIN' && (
+                <Route path="anality" element={<Anality />} />
+              )}
               <Route />
             </Route>
           </Route>
