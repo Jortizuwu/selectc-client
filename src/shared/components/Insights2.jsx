@@ -1,5 +1,5 @@
 import React from 'react'
-import { PolarArea } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 
 import { UilBackpack } from '@iconscout/react-unicons'
 
@@ -36,7 +36,7 @@ const Insights = ({ careers, careers2, title, title2 }) => {
             <h2 className="text-md font-bold">{title}</h2>
           </div>
         </section>
-        <PolarArea data={careers} />
+        <Pie data={careers} />
       </div>
       <div className="rounded-3xl p-4 bg-white shadow-lg">
         <section className="flex items-center justify-between">
@@ -47,7 +47,7 @@ const Insights = ({ careers, careers2, title, title2 }) => {
             <h2 className="text-md font-bold">{title2}</h2>
           </div>
         </section>
-        <PolarArea data={careers2} />
+        <Pie data={careers2} />
       </div>
     </section>
   )

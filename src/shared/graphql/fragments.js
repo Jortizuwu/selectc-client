@@ -18,7 +18,6 @@ export const USER_DATA = gql`
     }
     Careers {
       name
-      description
       careerID
       user_has_career {
         coincidenceValue

@@ -16,6 +16,7 @@ const Results = () => {
   const [showChat] = useState(false)
   const [typedChars, setTypedChars] = useState(0)
 
+  console.log(user)
   const { preferences, dataCareers, data, activities } = useMemo(
     () => ({
       preferences: user?.Preferences,
